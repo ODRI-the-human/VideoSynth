@@ -68,10 +68,11 @@ Shader "Custom/shadey"
             functiony = round((cos(50 * sin(0.01f * unityTime) * (position.x - sin(position.y * 50 * sin(0.01f * unityTime))))));
             functionz = pow(cos(50 * sin(0.01f * unityTime) * position.x), 0.5f);
 
-            position *= 100;
+            position *= 300;
             float functionNoise = 2 * sin(unityTime * position.x * position.y);
 
             o.Albedo = (greenPow * functiony * functionx * (1 + 0.3f * cos(0.03f * unityTime))) * float3(cos(0.1f * unityTime), cos(0.1f * unityTime + PI/3), cos(0.1f * unityTime + 2 * PI / 3)) + (functionNoise) * float3(cos(0.1f * unityTime), cos(0.1f * unityTime + PI / 3), cos(0.1f * unityTime + 2 * PI / 3));
+            //o.Albedo = (greenPow * functiony * functionx * (1 + 0.3f * cos(0.03f * unityTime))) * float3(0.5f, 0.5f, 0.5f) + (functionNoise) * float3(0.5f, 0.5f, 0.5f);
             // Metallic and smoothness come from slider variables
             o.Metallic = _Metallic;
             o.Smoothness = _Glossiness;

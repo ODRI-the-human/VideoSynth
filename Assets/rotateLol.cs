@@ -4,7 +4,11 @@ using UnityEngine;
 
 public class rotateLol : MonoBehaviour
 {
-    int timer = 0;
+    public float speed = 1f;
+
+    public float xMult = 0;
+    public float yMult = 0;
+    public float zMult = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -15,7 +19,6 @@ public class rotateLol : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        timer++;
-        transform.rotation = Quaternion.Euler(-90, 0, timer);
+        transform.rotation *= Quaternion.Euler(xMult * speed, yMult * speed, zMult * speed);
     }
 }

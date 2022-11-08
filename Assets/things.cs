@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
+using UnityEngine.UI;
 
 
 
@@ -12,10 +13,12 @@ public class things : MonoBehaviour
     public AudioSource audio;
     bool sampleAgain = true;
 
-    public TextMeshProUGUI timeAccelText;
+    public GameObject canvas;
 
     private float clipSampleRate;
     private int sampleDataLength = 1024;
+
+    float fixedFlashTime = 1.0f;
 
     float timeAccel;
     float timeAccelCoeff = 10;
@@ -36,6 +39,18 @@ public class things : MonoBehaviour
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
+
+        if (Input.GetButtonDown("Hide"))
+        {
+            if (canvas.GetComponent<CanvasScaler>().scaleFactor == 1)
+            {
+                canvas.GetComponent<CanvasScaler>().scaleFactor = 0;
+            }
+            else
+            {
+                canvas.GetComponent<CanvasScaler>().scaleFactor = 1;
+            }
+        }
     }
 
     void LateUpdate()
@@ -49,13 +64,12 @@ public class things : MonoBehaviour
         }
         clipLoudness /= sampleDataLength; //clipLoudness is what you are looking for
 
-        if (clipLoudness > 0.4f && timeToResample <= 50 && sampleAgain)
+        if ((clipLoudness > 0.43f && timeToResample <= 50 && sampleAgain)) // ((Mathf.Round(Time.time % fixedFlashTime) * 10)/10 == 0 && timeToResample <= 0)
         {
-            Debug.Log(clipLoudness.ToString());
             timeAccel = timeAccelCoeff;
             greenPow = 2;
             sampleAgain = false;
-            timeToResample = 60;
+            timeToResample = 75;
         }
         else
         {
@@ -73,8 +87,6 @@ public class things : MonoBehaviour
         greenPow -= 0.1f;
         greenPow = Mathf.Clamp(greenPow, 1, 900);
         mattTheSquid.SetFloat("greenPow", greenPow);
-
-        timeAccelText.text = timeAccel.ToString();
 
         timeAccel /= 1.1f;
         //timeAccel = Mathf.Clamp(timeAccel, 0.03f, 900);
