@@ -18,6 +18,7 @@ public class things : MonoBehaviour
     private int sampleDataLength = 1024;
 
     float timeAccel;
+    float timeAccelCoeff = 10;
     float timeToResample = 0;
     float totalTimeAdded = 0;
     float greenPow = 1;
@@ -51,7 +52,7 @@ public class things : MonoBehaviour
         if (clipLoudness > 0.4f && timeToResample <= 50 && sampleAgain)
         {
             Debug.Log(clipLoudness.ToString());
-            timeAccel = 3;
+            timeAccel = timeAccelCoeff;
             greenPow = 2;
             sampleAgain = false;
             timeToResample = 60;

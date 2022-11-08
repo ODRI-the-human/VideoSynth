@@ -6,8 +6,8 @@ Shader "Custom/shadey"
         _MainTex ("Albedo (RGB)", 2D) = "white" {}
         _Glossiness ("Smoothness", Range(0,1)) = 0.5
         _Metallic ("Metallic", Range(0,1)) = 0.0
-        _Width("Width", Float) = 8
-        _Height("Height", Float) = 8
+        _Width("Width", Float) = 2
+        _Height("Height", Float) = 2
         _Time("Time", Float) = 0
     }
     SubShader
@@ -25,6 +25,12 @@ Shader "Custom/shadey"
         sampler2D _MainTex;
         float unityTime;
         float greenPow;
+
+        float functionx = 1;
+        float functiony = 1;
+        float functionz = 1;
+
+        static const float PI = 3.14159265f;
 
         struct Input
         {
@@ -49,15 +55,23 @@ Shader "Custom/shadey"
         {
             // Albedo comes from a texture tinted by color
             float2 position = IN.uv_MainTex;
-            //position *= float2(_Width, _Height);
             //position = round(position);
-            //position /= float2(_Width, _Height);
-            float x = position[1];
+            //position /= 200;
+            position *= 1.5f + 0.5f * sin(0.1f * unityTime * position.x);
+            position *= 2.3f + 1.2f * sin(0.01f * unityTime);
+            position /= 5;
+            position.x *= 1 + 0.1f * sin(3 * position.y + 0.2f * unityTime);
+            //position.x += 0.01f * unityTime;
+            position.y *= 1 + 0.2f * sin(5 * position.x + 0.2f * unityTime);
             fixed4 c = tex2D (_MainTex, IN.uv_MainTex) * _Color;
-            float functionx = (0.1f * sin(0.1f * unityTime) + 0.8f) * (pow(sin(25 * (-position.x * position.y + 0.2f * unityTime)), 5 * (sin(unityTime))) + sin(3 * position.x));
-            float functionz = (0.1f * cos(0.1f * unityTime) + 0.8f) * (pow(sin(25 * (position.x * position.y + 0.3f * unityTime)), (sin(2 * unityTime))));
-            float functiony = pow((pow(functionx,functionz) + 0.3f),greenPow);
-            o.Albedo = greenPow * float3(functionx, functiony, functionz);
+            functionx = 3 * round(sin(50 * sin(0.01f * unityTime) * position.x) + cos(0.1f * position.y)) / 2;
+            functiony = round((cos(50 * sin(0.01f * unityTime) * (position.x - sin(position.y * 50 * sin(0.01f * unityTime))))));
+            functionz = pow(cos(50 * sin(0.01f * unityTime) * position.x), 0.5f);
+
+            position *= 100;
+            float functionNoise = 2 * sin(unityTime * position.x * position.y);
+
+            o.Albedo = (greenPow * functiony * functionx * (1 + 0.3f * cos(0.03f * unityTime))) * float3(cos(0.1f * unityTime), cos(0.1f * unityTime + PI/3), cos(0.1f * unityTime + 2 * PI / 3)) + (functionNoise) * float3(cos(0.1f * unityTime), cos(0.1f * unityTime + PI / 3), cos(0.1f * unityTime + 2 * PI / 3));
             // Metallic and smoothness come from slider variables
             o.Metallic = _Metallic;
             o.Smoothness = _Glossiness;
