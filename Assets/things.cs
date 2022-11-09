@@ -12,6 +12,7 @@ public class things : MonoBehaviour
     public Material mattTheSquid;
     public AudioSource audio;
     bool sampleAgain = true;
+    public bool doFlash = false;
 
     public GameObject canvas;
 
@@ -21,7 +22,7 @@ public class things : MonoBehaviour
     float fixedFlashTime = 1.0f;
 
     float timeAccel;
-    float timeAccelCoeff = 10;
+    public float timeAccelCoeff = 10;
     float timeToResample = 0;
     float totalTimeAdded = 0;
     float greenPow = 1;
@@ -64,7 +65,7 @@ public class things : MonoBehaviour
         }
         clipLoudness /= sampleDataLength; //clipLoudness is what you are looking for
 
-        if ((clipLoudness > 0.43f && timeToResample <= 50 && sampleAgain)) // ((Mathf.Round(Time.time % fixedFlashTime) * 10)/10 == 0 && timeToResample <= 0)
+        if ((clipLoudness > 0.43f && timeToResample <= 50 && sampleAgain && doFlash)) // ((Mathf.Round(Time.time % fixedFlashTime) * 10)/10 == 0 && timeToResample <= 0)
         {
             timeAccel = timeAccelCoeff;
             greenPow = 2;
@@ -86,7 +87,7 @@ public class things : MonoBehaviour
 
         greenPow -= 0.1f;
         greenPow = Mathf.Clamp(greenPow, 1, 900);
-        mattTheSquid.SetFloat("greenPow", greenPow);
+        mattTheSquid.SetFloat("flashAmount", greenPow);
 
         timeAccel /= 1.1f;
         //timeAccel = Mathf.Clamp(timeAccel, 0.03f, 900);
