@@ -80,9 +80,9 @@ Material:
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _sinAdd: {r: 55, g: 1, b: 1, a: 1}
-    - _sinAmp: {r: 55, g: 1, b: 1, a: 1}
-    - _sinFreqMult: {r: 50, g: 1, b: 1, a: 1}
+    - _sinAdd: {r: 1, g: 1, b: 1, a: 1}
+    - _sinAmp: {r: 1, g: 1, b: 1, a: 1}
+    - _sinFreqMult: {r: 1, g: 1, b: 1, a: 1}
     - _sinMath1Factor: {r: 1, g: 1, b: 1, a: 1}
     - _sinMath1Invert: {r: 0, g: 0, b: 0, a: 0}
     - _sinMath1Op: {r: 0, g: 0, b: 0, a: 0}
@@ -95,10 +95,10 @@ Material:
     - _sinMath3Invert: {r: 0, g: 0, b: 0, a: 0}
     - _sinMath3Op: {r: 0, g: 0, b: 0, a: 0}
     - _sinMath3Other: {r: 0, g: 0, b: 0, a: 0}
-    - _sinTimeMult: {r: 0, g: 0, b: 0, a: 0}
-    - _sinTimeMultAmt: {r: 5, g: 5, b: 5, a: 5}
+    - _sinTimeMult: {r: 1, g: 1, b: 1, a: 1}
+    - _sinTimeMultAmt: {r: 1, g: 1, b: 1, a: 1}
     - _sinXMult: {r: 1, g: 1, b: 1, a: 1}
-    - _sinXMultAmt: {r: 50, g: 5, b: 5, a: 5}
-    - _sinYMult: {r: 0, g: 0, b: 0, a: 0}
-    - _sinYMultAmt: {r: 5, g: 5, b: 5, a: 5}
+    - _sinXMultAmt: {r: 50, g: 1, b: 1, a: 1}
+    - _sinYMult: {r: 1, g: 1, b: 1, a: 1}
+    - _sinYMultAmt: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []

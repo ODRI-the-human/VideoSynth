@@ -10,138 +10,155 @@ public class OscillatorControls : MonoBehaviour
 
     public int oscNumber;
 
-    int[] intVector = new int[4];
-    float[] floatVector = new float[4];
+    //public float[] floatVector = new float[4] {1,1,1,1};
+    public Vector4 floatVector = new Vector4(1, 1, 1, 1);
 
     void Start()
     {
-        gameObject.SetActive(false);
+        //gameObject.SetActive(false);
+    }
+
+    void setAFloat(string var, float val)
+    {
+        floatVector = mattTheSquid.GetVector(var);
+        Debug.Log(var + ", " + val.ToString() + ", " + floatVector.ToString());
+        floatVector[oscNumber] = val;
+        mattTheSquid.SetVector(var, floatVector);
     }
 
     // Update is called once per frame
-    public void enableX(bool tog)
+    public void enableOscs(bool tog)
     {
-        Debug.Log(tog.ToString());
         if (tog)
         {
-            mattTheSquid.SetInteger("sin1XMult"[0], 1);
+            setAFloat("oscsEnabled", 1);
         }
         else
         {
-            mattTheSquid.SetInteger("sin1XMult"[0], 0);
+            setAFloat("oscsEnabled", 0);
+        }
+    }
+
+    public void enableX(bool tog)
+    {
+        if (tog)
+        {
+            setAFloat("sinXMult", 1);
+        }
+        else
+        {
+            setAFloat("sinXMult", 0);
         }
     }
 
     public void setXMult(float value)
     {
-        mattTheSquid.SetFloat("sin1XMultAmt"[0], Mathf.Pow(10 * value,2));
+        setAFloat("sinXMultAmt", Mathf.Pow(10 * value, 2));
     }
 
     public void enableY(bool tog)
     {
-        Debug.Log(tog.ToString());
         if (tog)
         {
-            mattTheSquid.SetInteger("sin1YMult"[0], 1);
+            setAFloat("sinYMult", 1);
         }
         else
         {
-            mattTheSquid.SetInteger("sin1YMult"[0], 0);
+            setAFloat("sinYMult", 0);
         }
     }
 
     public void setYMult(float value)
     {
-        mattTheSquid.SetFloat("sin1YMultAmt"[0], Mathf.Pow(10 * value, 2));
+        setAFloat("sinYMultAmt", Mathf.Pow(10 * value, 2));
     }
 
     public void enableTime(bool tog)
     {
-        Debug.Log(tog.ToString());
         if (tog)
         {
-            mattTheSquid.SetInteger("sin1TimeMult"[0], 1);
+            setAFloat("sinTimeMult", 1);
         }
         else
         {
-            mattTheSquid.SetInteger("sin1TimeMult"[0], 0);
+            setAFloat("sinTimeMult", 0);
         }
     }
 
     public void setTimeMult(float value)
     {
-        mattTheSquid.SetFloat("sin1TimeMultAmt"[0], value * 10 - 5);
+        setAFloat("sinTimeMultAmt",value * 10 - 5);
     }
 
     public void setAmpMult(float value)
     {
-        mattTheSquid.SetFloat("sin1Amp"[0], value * 3);
+        setAFloat("sinAmp",value * 3);
     }
 
     public void setFreqMult(float value)
     {
-        mattTheSquid.SetFloat("sin1FreqMult"[0], value * 10);
+        setAFloat("sinFreqMult",value * 10);
     }
 
     public void setAdd(float value)
     {
-        mattTheSquid.SetFloat("sin1Add"[0], value * 3);
+        setAFloat("sinAdd", value * 3);
     }
 
     public void Math1OpChange(int value)
     {
-        mattTheSquid.SetInteger("sin1Math1Op", value);
+        setAFloat("sinMath1Op", value);
     }
 
     public void Math1SourceChange(int value)
     {
-        mattTheSquid.SetInteger("sin1Math1Other", value);
+        setAFloat("sinMath1Other", value);
     }
 
     public void Math1AmtChange(string value)
     {
-        mattTheSquid.SetFloat("sin1Math1Factor", float.Parse(value));
+        setAFloat("sinMath1Factor", float.Parse(value));
     }
 
     public void Math2OpChange(int value)
     {
-        mattTheSquid.SetInteger("sin1Math2Op", value);
+        setAFloat("sinMath2Op", value);
     }
 
     public void Math2SourceChange(int value)
     {
-        mattTheSquid.SetInteger("sin1Math2Other", value);
+        setAFloat("sinMath2Other", value);
     }
 
     public void Math2AmtChange(string value)
     {
-        mattTheSquid.SetFloat("sin1Math2Factor", float.Parse(value));
+        setAFloat("sinMath2Factor", float.Parse(value));
     }
 
     public void Math3OpChange(int value)
     {
-        mattTheSquid.SetInteger("sin1Math3Op", value);
+        setAFloat("sinMath3Op", value);
     }
 
     public void Math3SourceChange(int value)
     {
-        mattTheSquid.SetInteger("sin1Math3Other", value);
+        setAFloat("sinMath3Other", value);
     }
 
     public void Math3AmtChange(string value)
     {
-        mattTheSquid.SetFloat("sin1Math3Factor", float.Parse(value));
+        setAFloat("sinMath3Factor", float.Parse(value));
     }
 
     public void Math1Invert(bool tog)
     {
         if (tog)
         {
-            mattTheSquid.SetInteger("sin1Math1Invert", 1);
+            setAFloat("sinMath1Invert", 1);
         }
         else
         {
-            mattTheSquid.SetInteger("sin1Math1Invert", 0);
+            setAFloat("sinMath1Invert", 0);
         }
     }
     
@@ -149,11 +166,11 @@ public class OscillatorControls : MonoBehaviour
     {
         if (tog)
         {
-            mattTheSquid.SetInteger("sin1Math2Invert", 1);
+            setAFloat("sinMath2Invert", 1);
         }
         else
         {
-            mattTheSquid.SetInteger("sin1Math2Invert", 0);
+            setAFloat("sinMath2Invert", 0);
         }
     }
     
@@ -161,11 +178,11 @@ public class OscillatorControls : MonoBehaviour
     {
         if (tog)
         {
-            mattTheSquid.SetInteger("sin1Math3Invert", 1);
+            setAFloat("sinMath3Invert", 1);
         }
         else
         {
-            mattTheSquid.SetInteger("sin1Math3Invert", 0);
+            setAFloat("sinMath3Invert", 0);
         }
     }
 
