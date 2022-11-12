@@ -65,6 +65,7 @@ Material:
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
+    - _Height: 2
     - _Metallic: 0
     - _Mode: 0
     - _OcclusionStrength: 1
@@ -73,8 +74,31 @@ Material:
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _UVSec: 0
+    - _Width: 2
     - _ZWrite: 1
+    - _unityTime: 0
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _sinAdd: {r: 55, g: 1, b: 1, a: 1}
+    - _sinAmp: {r: 55, g: 1, b: 1, a: 1}
+    - _sinFreqMult: {r: 50, g: 1, b: 1, a: 1}
+    - _sinMath1Factor: {r: 1, g: 1, b: 1, a: 1}
+    - _sinMath1Invert: {r: 0, g: 0, b: 0, a: 0}
+    - _sinMath1Op: {r: 0, g: 0, b: 0, a: 0}
+    - _sinMath1Other: {r: 0, g: 0, b: 0, a: 0}
+    - _sinMath2Factor: {r: 1, g: 1, b: 1, a: 1}
+    - _sinMath2Invert: {r: 0, g: 0, b: 0, a: 0}
+    - _sinMath2Op: {r: 0, g: 0, b: 0, a: 0}
+    - _sinMath2Other: {r: 0, g: 0, b: 0, a: 0}
+    - _sinMath3Factor: {r: 1, g: 1, b: 1, a: 1}
+    - _sinMath3Invert: {r: 0, g: 0, b: 0, a: 0}
+    - _sinMath3Op: {r: 0, g: 0, b: 0, a: 0}
+    - _sinMath3Other: {r: 0, g: 0, b: 0, a: 0}
+    - _sinTimeMult: {r: 0, g: 0, b: 0, a: 0}
+    - _sinTimeMultAmt: {r: 5, g: 5, b: 5, a: 5}
+    - _sinXMult: {r: 1, g: 1, b: 1, a: 1}
+    - _sinXMultAmt: {r: 50, g: 5, b: 5, a: 5}
+    - _sinYMult: {r: 0, g: 0, b: 0, a: 0}
+    - _sinYMultAmt: {r: 5, g: 5, b: 5, a: 5}
   m_BuildTextureStacks: []
