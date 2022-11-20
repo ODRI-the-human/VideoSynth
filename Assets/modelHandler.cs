@@ -12,14 +12,9 @@ public class modelHandler : MonoBehaviour
     public Shader shadey;
     public GameObject master;
 
-    void Start()
-    {
-        setXYScale(0.5f);
-    }
-
     public void setXYScale(float value)
     {
-        mattTheSquid.SetFloat("xyScale", 2 * value);
+        mattTheSquid.SetFloat("xyScale", value);
     }
 
     public void setSpeed(float value)
