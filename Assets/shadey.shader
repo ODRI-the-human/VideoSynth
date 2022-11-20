@@ -14,37 +14,34 @@ Shader "Custom/shadey"
         _Width("Width", Float) = 2
         _Height("Height", Float) = 2
         _unityTime("Time", Float) = 0
-        _xyScale("xyScale", Float) = 1
 
-        _oscsEnabled("oscsEnabled", Float) = (1, 0, 0, 0)
+        /*_sinXMult("sinXMult", Int) = (1, 1, 1, 1)
+        _sinXMultAmt("sinXMultAmt", Float) = (50, 1, 1, 1)
 
-        _sinXMult("sinXMult", Float) = (1, 1, 1, 1)
-        _sinXMultAmt("sinXMultAmt", Float) = (1, 1, 1, 1)
-
-        _sinYMult("sinYMult", Float) = (0, 0, 0, 0)
+        _sinYMult("sinYMult", Int) = (0, 0, 0, 0)
         _sinYMultAmt("sinYMultAmt", Float) = (1, 1, 1, 1)
 
-        _sinTimeMult("sinTimeMult", Float) = (0, 0, 0, 0)
+        _sinTimeMult("sinTimeMult", Int) = (0, 0, 0, 0)
         _sinTimeMultAmt("sinTimeMultAmt", Float) = (1, 1, 1, 1)
 
         _sinFreqMult("sinFreqMult", Float) = (1, 1, 1, 1)
         _sinAmp("sinAmp", Float) = (1, 1, 1, 1)
-        _sinAdd("sinAdd", Float) = (0, 0, 0, 0)
+        _sinAdd("sinAdd", Float) = (1, 1, 1, 1)
 
-        _sinMath1Op("sinMat1hOp", Float) = (0, 0, 0, 0)
-        _sinMath1Other("sinMath1Other", Float) = (0, 0, 0, 0)
+        _sinMath1Op("sinMat1hOp", Int) = (0, 0, 0, 0)
+        _sinMath1Other("sinMath1Other", Int) = (0, 0, 0, 0)
         _sinMath1Factor("sinMath1Factor", Float) = (1, 1, 1, 1)
-        _sinMath1Invert("sinMath1Invert", Float) = (0, 0, 0, 0)
+        _sinMath1Invert("sinMath1Invert", Int) = (0, 0, 0, 0)
 
-        _sinMath2Op("sinMath2Op", Float) = (0, 0, 0, 0)
-        _sinMath2Other("sinMath2Other", Float) = (0, 0, 0, 0)
+        _sinMath2Op("sinMath2Op", Int) = (0, 0, 0, 0)
+        _sinMath2Other("sinMath2Other", Int) = (0, 0, 0, 0)
         _sinMath2Factor("sinMath2Factor", Float) = (1, 1, 1, 1)
-        _sinMath2Invert("sinMath2Invert", Float) = (0, 0, 0, 0)
+        _sinMath2Invert("sinMath2Invert", Int) = (0, 0, 0, 0)
 
-        _sinMath3Op("sinMath3Op", Float) = (0, 0, 0, 0)
-        _sinMath3Other("sinMath3Other", Float) = (0, 0, 0, 0)
+        _sinMath3Op("sinMath3Op", Int) = (0, 0, 0, 0)
+        _sinMath3Other("sinMath3Other", Int) = (0, 0, 0, 0)
         _sinMath3Factor("sinMath3Factor", Float) = (1, 1, 1, 1)
-        _sinMath3Invert("sinMath3Invert", Float) = (0, 0, 0, 0)
+        _sinMath3Invert("sinMath3Invert", Int) = (0, 0, 0, 0)*/
     }
     SubShader
     {
@@ -76,6 +73,7 @@ Shader "Custom/shadey"
         // put more per-instance properties here
         //UNITY_INSTANCING_BUFFER_END(Props)
 
+<<<<<<< HEAD
         float inputAmpMult = 50;
         float outputPostionX;
         float outputPostionY;
@@ -111,12 +109,49 @@ Shader "Custom/shadey"
         float4 sinMath3Factor = float4 (1, 1, 1, 1);
         float4 sinMath3Invert = float4 (0, 0, 0, 0);
 
+=======
+>>>>>>> parent of e2b00b1 (it works)
         void surf (Input IN, inout SurfaceOutputStandard o)
         {
+            // when setting up for controls, comment out everything below and copy it to just before the surf shit.
+            int4 oscsEnabled = int4 (1, 0, 0, 0); // tick box.
+
+            int4 sinXMult = int4 (1, 1, 1, 1); // tick box.
+            float4 sinXMultAmt = float4 (1, 1, 1, 1); // slider
+
+            int4 sinYMult = int4 (1, 1, 1, 1); // tick box.
+            float4 sinYMultAmt = float4 (1, 1, 1, 1); // slider
+
+            int4 sinTimeMult = int4 (1, 1, 1, 1); // tick box
+            float4 sinTimeMultAmt = float4 (1, 1, 1, 1); // slider
+
+            float4 sinFreqMult = float4 (1, 1, 1, 1); // slider
+            float4 sinAmp = float4 (1, 1, 1, 1); // slider.
+            float4 sinAdd = float4 (0, 0, 0, 0); // slider
+
+            int4 sinMath1Op = int4 (0, 0, 0, 0); // needs select box.
+            int4 sinMath1Other = int4 (0, 0, 0, 0); // select box.
+            float4 sinMath1Factor = float4 (1, 1, 1, 1);
+            int4 sinMath1Invert = int4 (0, 0, 0, 0);
+
+            int4 sinMath2Op = int4 (0, 0, 0, 0); // needs select box.
+            int4 sinMath2Other = int4 (0, 0, 0, 0); // select box.
+            float4 sinMath2Factor = float4 (1, 1, 1, 1);
+            int4 sinMath2Invert = int4 (0, 0, 0, 0);
+
+            int4 sinMath3Op = int4 (0, 0, 0, 0); // needs select box.
+            int4 sinMath3Other = int4 (0, 0, 0, 0); // select box.
+            float4 sinMath3Factor = float4 (1, 1, 1, 1);
+            int4 sinMath3Invert = int4 (0, 0, 0, 0);
+            // BUM BUM HERE IS THE END OF THE DETRITUS
+
             float2 position = IN.uv_MainTex;
+<<<<<<< HEAD
             //position *= 200;
             float outputPositionX = position.x;
             float outputPositionY = position.y;
+=======
+>>>>>>> parent of e2b00b1 (it works)
 
             o.Albedo = inputAmpMult * float3(1,1,1);
             // Metallic and smoothness come from slider variables sussy
@@ -127,10 +162,10 @@ Shader "Custom/shadey"
 
             float4 sinVal = float4 (0,0,0,0);
 
-            float4 sinMathOp = float4 (1,1,1,1);
-            float4 sinMathOther = float4 (1, 1, 1, 1);
+            int4 sinMathOp = int4 (1,1,1,1);
+            int4 sinMathOther = int4 (1, 1, 1, 1);
             float4 sinMathFactor = float4 (1, 1, 1, 1);
-            float4 sinMathInvert = float4 (1, 1, 1, 1);
+            int4 sinMathInvert = int4 (1, 1, 1, 1);
 
             for (int i = 0; i < 4; i++)
             {
@@ -274,7 +309,7 @@ Shader "Custom/shadey"
             }
 
 
-            o.Albedo = (sinVal[0] - sinVal[1]) * float3(Rval, Gval, Bval);
+            o.Albedo = (sinVal[1] + sinVal[0] + sinVal[2] + sinVal[3]) * float3(Rval, Gval, Bval);
             //o.Albedo = sin1XMult * float3(Rval, Gval, Bval);
             // Metallic and smoothness come from slider variables
             fixed4 c = tex2D(_MainTex, IN.uv_MainTex) * _Color;
