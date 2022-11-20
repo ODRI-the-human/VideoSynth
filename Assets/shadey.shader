@@ -41,7 +41,27 @@ Shader "Custom/shadey"
         _sinMath3Op("sinMath3Op", Int) = (0, 0, 0, 0)
         _sinMath3Other("sinMath3Other", Int) = (0, 0, 0, 0)
         _sinMath3Factor("sinMath3Factor", Float) = (1, 1, 1, 1)
+<<<<<<< Updated upstream
         _sinMath3Invert("sinMath3Invert", Int) = (0, 0, 0, 0)*/
+=======
+        _sinMath3Invert("sinMath3Invert", Float) = (0, 0, 0, 0)
+
+        _ampAlgOrder("ampAlgOrder", Float) = (0, 1, 2, 3)
+        _ampAlgOps("ampAlgOps", Float) = (2, 1, 3, 0)
+        _ampAlgFinals("ampAlgFinals", Float) = (0, 1, 0, 0)
+
+        _RAlgOrder("RAlgOrder", Float) = (0, 1, 2, 3)
+        _RAlgOps("RAlgOps", Float) = (2, 1, 3, 0)
+        _RAlgFinals("RAlgFinals", Float) = (0, 1, 0, 0)
+
+        _GAlgOrder("GAlgOrder", Float) = (0, 1, 2, 3)
+        _GAlgOps("GAlgOps", Float) = (2, 1, 3, 0)
+        _GAlgFinals("GAlgFinals", Float) = (0, 1, 0, 0)
+
+        _BAlgOrder("BAlgOrder", Float) = (0, 1, 2, 3)
+        _BAlgOps("BAlgOps", Float) = (2, 1, 3, 0)
+        _BAlgFinals("BAlgFinals", Float) = (0, 1, 0, 0)
+>>>>>>> Stashed changes
     }
     SubShader
     {
@@ -167,6 +187,7 @@ Shader "Custom/shadey"
             float4 sinMathFactor = float4 (1, 1, 1, 1);
             int4 sinMathInvert = int4 (1, 1, 1, 1);
 
+            // The following for calculates each sin operator.
             for (int i = 0; i < 4; i++)
             {
                 float sinInBracketVal = 1; // 1 by default, doesn't need slider.
@@ -299,6 +320,7 @@ Shader "Custom/shadey"
                 }
             }
             
+<<<<<<< Updated upstream
             bool cycleColours = true;
             float colourCycleSpeed = 2;
             if (cycleColours)
@@ -306,10 +328,89 @@ Shader "Custom/shadey"
                 Rval = 0.5f * sin(colourCycleSpeed * (unityTime)) + 0.5f;
                 Gval = 0.5f * sin(colourCycleSpeed * (unityTime + 2 * PI/3)) + 0.5f;
                 Bval = 0.5f * sin(colourCycleSpeed * (unityTime + 4 * PI/3)) + 0.5f;
+=======
+            //bool cycleColours = true;
+            //float colourCycleSpeed = 2;
+            //if (cycleColours)
+            //{
+            //    Rval = 0.5f * sin(colourCycleSpeed * (unityTime)) + 0.5f;
+            //    Gval = 0.5f * sin(colourCycleSpeed * (unityTime + 2 * PI/3)) + 0.5f;
+            //    Bval = 0.5f * sin(colourCycleSpeed * (unityTime + 4 * PI/3)) + 0.5f;
+            //}
+
+            // Algorithm shit
+            float4 algOrder = float4 (0, 0, 0, 0);
+            float3 algOps = float4 (0, 0, 0, 0);
+            float2 algFinals = float4 (0, 1, 0, 0);
+            float funcResult = 0;
+
+            float4 ampRGB = float4(0, 0, 0, 0);
+
+            // Calculates the Brightness, R, G and B values based on the algorithms determined by the user.
+            for (int k = 0; k < 4; k++) //if (unityTime == -1)//
+            {
+                funcResult = 0;
+
+                switch (k)
+                {
+                case 0:
+                    algOrder = ampAlgOrder;
+                    algOps = ampAlgOps;
+                    algFinals = ampAlgFinals;
+                    break;
+                case 1:
+                    algOrder = RAlgOrder;
+                    algOps = RAlgOps;
+                    algFinals = RAlgFinals;
+                    break;
+                case 2:
+                    algOrder = GAlgOrder;
+                    algOps = GAlgOps;
+                    algFinals = GAlgFinals;
+                    break;
+                case 3:
+                    algOrder = BAlgOrder;
+                    algOps = BAlgOps;
+                    algFinals = BAlgFinals;
+                    break;
+                }
+
+                for (int j = 0; j < 3; j++)
+                {
+
+                    if (j == 0)
+                    {
+                        funcResult = sinVal[algOrder[0]];
+                    }
+
+                    switch (algOps[j])
+                    {
+                    case 0: //Add
+                        funcResult += sinVal[algOrder[j + 1]];
+                        break;
+                    case 1: //Subtract
+                        funcResult -= sinVal[algOrder[j + 1]];
+                        break;
+                    case 2: //Mult
+                        funcResult *= sinVal[algOrder[j + 1]];
+                        break;
+                    case 3: //Divide
+                        funcResult /= sinVal[algOrder[j + 1]];
+                        break;
+                    }
+                }
+
+                ampRGB[k] = (funcResult + algFinals[0]) * algFinals[1];
+>>>>>>> Stashed changes
             }
 
+            //ampRGB[0] = sinVal[0] + sinVal[1] + sinVal[2] + sinVal[3];
 
+<<<<<<< Updated upstream
             o.Albedo = (sinVal[1] + sinVal[0] + sinVal[2] + sinVal[3]) * float3(Rval, Gval, Bval);
+=======
+            o.Albedo = ampRGB[0] * float3(1,1,1);//Rval * ampRGB[1], Gval * ampRGB[2], Bval * ampRGB[3]);
+>>>>>>> Stashed changes
             //o.Albedo = sin1XMult * float3(Rval, Gval, Bval);
             // Metallic and smoothness come from slider variables
             fixed4 c = tex2D(_MainTex, IN.uv_MainTex) * _Color;
