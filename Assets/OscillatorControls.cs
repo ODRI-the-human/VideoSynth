@@ -15,7 +15,32 @@ public class OscillatorControls : MonoBehaviour
 
     void Start()
     {
-        //gameObject.SetActive(false);
+        if (oscNumber == 0)
+        {
+            enableOscs(true);
+        }
+
+        enableX(true);
+        setXMult(0.5f);
+        enableY(false);
+        setYMult(0.5f);
+        enableTime(false);
+        setTimeMult(1);
+        setAmpMult(1);
+        setFreqMult(0.5f);
+        setAdd(0);
+        Math1OpChange(0);
+        Math1SourceChange(0);
+        Math1AmtChange(1.ToString());
+        Math1Invert(false);
+        Math2OpChange(0);
+        Math2SourceChange(0);
+        Math2AmtChange(1.ToString());
+        Math2Invert(false);
+        Math3OpChange(0);
+        Math3SourceChange(0);
+        Math3AmtChange(1.ToString());
+        Math3Invert(false);
     }
 
     void setAFloat(string var, float val)
