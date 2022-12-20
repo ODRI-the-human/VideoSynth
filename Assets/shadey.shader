@@ -2,66 +2,85 @@ Shader "Custom/shadey"
 {
     Properties
     {
-        _inputAmpMult("inputAmpMult", Float) = 2
-        _outputPositionX("outputPositionY", Float) = 1
-        _outputPositionX("outputPositionY", Float) = 1
-
         _Color("Color", Color) = (1,1,1,1)
         _MainTex("Albedo (RGB)", 2D) = "white" {}
         _Glossiness("Smoothness", Range(0,1)) = 0.5
-        _Metallic("Metallic", Range(0,1)) = 0.0        
         _Metallic("Metallic", Range(0,1)) = 0.0
         _Width("Width", Float) = 2
         _Height("Height", Float) = 2
         _unityTime("Time", Float) = 0
 
-        /*_sinXMult("sinXMult", Int) = (1, 1, 1, 1)
-        _sinXMultAmt("sinXMultAmt", Float) = (50, 1, 1, 1)
+        _xScale("xScale", Float) = 1
+        _yScale("yScale", Float) = 1
+        _xOffset("xOffset", Float) = 0
+        _yOffset("yOffset", Float) = 0
+        _tOffset("tOffset", Float) = 1
 
-        _sinYMult("sinYMult", Int) = (0, 0, 0, 0)
+        _oscsEnabled("oscsEnabled", Float) = (1, 0, 0, 0)
+
+        _sinXMult("sinXMult", Float) = (1, 1, 1, 1)
+        _sinXMultAmt("sinXMultAmt", Float) = (1, 1, 1, 1)
+
+        _sinYMult("sinYMult", Float) = (0, 0, 0, 0)
         _sinYMultAmt("sinYMultAmt", Float) = (1, 1, 1, 1)
 
-        _sinTimeMult("sinTimeMult", Int) = (0, 0, 0, 0)
+        _sinTimeMult("sinTimeMult", Float) = (0, 0, 0, 0)
         _sinTimeMultAmt("sinTimeMultAmt", Float) = (1, 1, 1, 1)
 
         _sinFreqMult("sinFreqMult", Float) = (1, 1, 1, 1)
         _sinAmp("sinAmp", Float) = (1, 1, 1, 1)
-        _sinAdd("sinAdd", Float) = (1, 1, 1, 1)
+        _sinAdd("sinAdd", Float) = (0, 0, 0, 0)
 
-        _sinMath1Op("sinMat1hOp", Int) = (0, 0, 0, 0)
-        _sinMath1Other("sinMath1Other", Int) = (0, 0, 0, 0)
+        _sinMath1Op("sinMath1Op", Float) = (0, 0, 0, 0)
+        _sinMath1Other("sinMath1Other", Float) = (0, 0, 0, 0)
         _sinMath1Factor("sinMath1Factor", Float) = (1, 1, 1, 1)
-        _sinMath1Invert("sinMath1Invert", Int) = (0, 0, 0, 0)
+        _sinMath1Invert("sinMath1Invert", Float) = (0, 0, 0, 0)
 
-        _sinMath2Op("sinMath2Op", Int) = (0, 0, 0, 0)
-        _sinMath2Other("sinMath2Other", Int) = (0, 0, 0, 0)
+        _sinMath2Op("sinMath2Op", Float) = (0, 0, 0, 0)
+        _sinMath2Other("sinMath2Other", Float) = (0, 0, 0, 0)
         _sinMath2Factor("sinMath2Factor", Float) = (1, 1, 1, 1)
-        _sinMath2Invert("sinMath2Invert", Int) = (0, 0, 0, 0)
+        _sinMath2Invert("sinMath2Invert", Float) = (0, 0, 0, 0)
 
-        _sinMath3Op("sinMath3Op", Int) = (0, 0, 0, 0)
-        _sinMath3Other("sinMath3Other", Int) = (0, 0, 0, 0)
+        _sinMath3Op("sinMath3Op", Float) = (0, 0, 0, 0)
+        _sinMath3Other("sinMath3Other", Float) = (0, 0, 0, 0)
         _sinMath3Factor("sinMath3Factor", Float) = (1, 1, 1, 1)
-<<<<<<< Updated upstream
-        _sinMath3Invert("sinMath3Invert", Int) = (0, 0, 0, 0)*/
-=======
         _sinMath3Invert("sinMath3Invert", Float) = (0, 0, 0, 0)
 
         _ampAlgOrder("ampAlgOrder", Float) = (0, 1, 2, 3)
-        _ampAlgOps("ampAlgOps", Float) = (2, 1, 3, 0)
+        _ampAlgOps("ampAlgOps", Float) = (0, 0, 0, 0)
         _ampAlgFinals("ampAlgFinals", Float) = (0, 1, 0, 0)
 
         _RAlgOrder("RAlgOrder", Float) = (0, 1, 2, 3)
-        _RAlgOps("RAlgOps", Float) = (2, 1, 3, 0)
+        _RAlgOps("RAlgOps", Float) = (0, 0, 0, 0)
         _RAlgFinals("RAlgFinals", Float) = (0, 1, 0, 0)
 
         _GAlgOrder("GAlgOrder", Float) = (0, 1, 2, 3)
-        _GAlgOps("GAlgOps", Float) = (2, 1, 3, 0)
+        _GAlgOps("GAlgOps", Float) = (0, 0, 0, 0)
         _GAlgFinals("GAlgFinals", Float) = (0, 1, 0, 0)
 
         _BAlgOrder("BAlgOrder", Float) = (0, 1, 2, 3)
-        _BAlgOps("BAlgOps", Float) = (2, 1, 3, 0)
+        _BAlgOps("BAlgOps", Float) = (0, 0, 0, 0)
         _BAlgFinals("BAlgFinals", Float) = (0, 1, 0, 0)
->>>>>>> Stashed changes
+
+
+
+
+        _HarmMode("HarmMode", Float) = (0,0,0,0)
+        _HarmNum("HarmNum", Float) = (1,1,1,1)
+        _HarmInv("HarmInv", Float) = (0,0,0,0)
+
+
+
+        _finalAdd("finalAdd", Float) = (0,0,0,0)
+        _finalMult("finalMult", Float) = (1,1,1,1)
+
+        _distModeX("distModeX", Float) = 0
+        _distModeY("distModeY", Float) = 0
+        _distModeT("distModeT", Float) = 0
+
+        _oscMode("oscMode", Float) = (0,0,0,0)
+        _rotAngle("rotAngle", Float) = 0
+        _pixelateAmt("pixellateAmt", Float) = 0
     }
     SubShader
     {
@@ -76,6 +95,9 @@ Shader "Custom/shadey"
         #pragma target 3.0
 
         sampler2D _MainTex;
+        float unityTime;
+
+        static const float PI = 3.14159265f;
 
         struct Input
         {
@@ -86,20 +108,29 @@ Shader "Custom/shadey"
         half _Metallic;
         fixed4 _Color;
 
+        float _Width = 5;
+        float _Height;
+
+        float nrand(float2 uv)
+        {
+            return frac(sin(dot(uv, float2(12.9898, 78.233))) * 43758.5453 * unityTime);
+        }
+
         // Add instancing support for this shader. You need to check 'Enable Instancing' on materials that use the shader.
         // See https://docs.unity3d.com/Manual/GPUInstancing.html for more information about instancing.
         // #pragma instancing_options assumeuniformscaling
-        //UNITY_INSTANCING_BUFFER_START(Props)
-        // put more per-instance properties here
-        //UNITY_INSTANCING_BUFFER_END(Props)
+        UNITY_INSTANCING_BUFFER_START(Props)
+            // put more per-instance properties here
+        UNITY_INSTANCING_BUFFER_END(Props)
 
-<<<<<<< HEAD
-        float inputAmpMult = 50;
-        float outputPostionX;
-        float outputPostionY;
         float4 oscsEnabled = float4 (1, 0, 0, 0); // tick box.
 
-        float xyScale = 1;
+        float xOffset = 0;
+        float yOffset = 0;
+
+        float xScale = 1;
+        float yScale = 1;
+        float tScale = 1;
 
         float4 sinXMult = float4 (1, 1, 1, 1); // tick box.
         float4 sinXMultAmt = float4 (1, 1, 1, 1); // slider
@@ -129,68 +160,145 @@ Shader "Custom/shadey"
         float4 sinMath3Factor = float4 (1, 1, 1, 1);
         float4 sinMath3Invert = float4 (0, 0, 0, 0);
 
-=======
->>>>>>> parent of e2b00b1 (it works)
+        float4 ampAlgOrder = float4 (0, 1, 2, 3);
+        float4 RAlgOrder = float4 (0, 1, 2, 3);
+        float4 GAlgOrder = float4 (0, 1, 2, 3);
+        float4 BAlgOrder = float4 (0, 1, 2, 3);
+
+        float4 ampAlgOps = float4 (0, 0, 0, 0);
+        float4 RAlgOps = float4 (0, 0, 0, 0);
+        float4 GAlgOps = float4 (0, 0, 0, 0);
+        float4 BAlgOps = float4 (0, 0, 0, 0);
+
+        float4 ampAlgFinals = float4 (0, 1, 0, 0);
+        float4 RAlgFinals = float4 (0, 1, 0, 0);
+        float4 GAlgFinals = float4 (0, 1, 0, 0);
+        float4 BAlgFinals = float4 (0, 1, 0, 0);
+
+
+        float4 HarmMode = float4 (0, 0, 0, 0);
+        float4 HarmNum = float4 (1, 1, 1, 1);
+        float4 HarmInv = float4 (0, 0, 0, 0);
+
+
+        float4 finalAdd = float4 (0, 0, 0, 0);
+        float4 finalMult = float4 (1, 1, 1, 1);
+
+        float distModeX = 0;
+        float distModeY = 0;
+        float distModeT = 0;
+
+        float4 oscMode = (0, 0, 0, 0);
+        float rotAngle = 0;
+        float pixelateAmt = 0;
+
         void surf (Input IN, inout SurfaceOutputStandard o)
         {
-            // when setting up for controls, comment out everything below and copy it to just before the surf shit.
-            int4 oscsEnabled = int4 (1, 0, 0, 0); // tick box.
-
-            int4 sinXMult = int4 (1, 1, 1, 1); // tick box.
-            float4 sinXMultAmt = float4 (1, 1, 1, 1); // slider
-
-            int4 sinYMult = int4 (1, 1, 1, 1); // tick box.
-            float4 sinYMultAmt = float4 (1, 1, 1, 1); // slider
-
-            int4 sinTimeMult = int4 (1, 1, 1, 1); // tick box
-            float4 sinTimeMultAmt = float4 (1, 1, 1, 1); // slider
-
-            float4 sinFreqMult = float4 (1, 1, 1, 1); // slider
-            float4 sinAmp = float4 (1, 1, 1, 1); // slider.
-            float4 sinAdd = float4 (0, 0, 0, 0); // slider
-
-            int4 sinMath1Op = int4 (0, 0, 0, 0); // needs select box.
-            int4 sinMath1Other = int4 (0, 0, 0, 0); // select box.
-            float4 sinMath1Factor = float4 (1, 1, 1, 1);
-            int4 sinMath1Invert = int4 (0, 0, 0, 0);
-
-            int4 sinMath2Op = int4 (0, 0, 0, 0); // needs select box.
-            int4 sinMath2Other = int4 (0, 0, 0, 0); // select box.
-            float4 sinMath2Factor = float4 (1, 1, 1, 1);
-            int4 sinMath2Invert = int4 (0, 0, 0, 0);
-
-            int4 sinMath3Op = int4 (0, 0, 0, 0); // needs select box.
-            int4 sinMath3Other = int4 (0, 0, 0, 0); // select box.
-            float4 sinMath3Factor = float4 (1, 1, 1, 1);
-            int4 sinMath3Invert = int4 (0, 0, 0, 0);
-            // BUM BUM HERE IS THE END OF THE DETRITUS
-
             float2 position = IN.uv_MainTex;
-<<<<<<< HEAD
-            //position *= 200;
-            float outputPositionX = position.x;
-            float outputPositionY = position.y;
-=======
->>>>>>> parent of e2b00b1 (it works)
 
-            o.Albedo = inputAmpMult * float3(1,1,1);
-            // Metallic and smoothness come from slider variables sussy
-            bool useSin1 = true;
-            float Rval = 1;
-            float Gval = 1;
-            float Bval = 1;
+            position = round(position * (4096 - pixelateAmt)) / (4096 - pixelateAmt);
+
+            position.x += xOffset;
+            position.y += yOffset;
+
+            position.x *= xScale;
+            position.y *= yScale;
+            unityTime *= tScale;
+
+            float distMode = 0;
+            float pos = 0;
+
+            for (int r = 0; r < 3; r++)
+            {
+                switch (r)
+                {
+                case 0:
+                    distMode = distModeT;
+                    pos = unityTime;
+                    break;
+                case 1:
+                    distMode = distModeX;
+                    pos = position.x;
+                    break;
+                case 2:
+                    distMode = distModeY;
+                    pos = position.y;
+                    break;
+                }
+
+                switch (distMode)
+                {
+                case 0:
+                    //penis (nothing)
+                    break;
+                case 1:
+                    pos *= sin(4 * position.x * position.y);
+                    break;
+                case 2:
+                    pos += sin(unityTime);
+                    break;
+                case 3:
+                    pos += pow(position.x * position.y, 2);
+                    break;
+                case 4:
+                    pos -= pow(position.x, 3);
+                    break;
+                case 5:
+                    pos -= pow(position.y, 3);
+                    break;
+                case 6:
+                    pos += pow(position.y, position.x);
+                    break;
+                case 7:
+                    pos += cos(90 * position.x) - sin(90 * rotAngle * position.y);
+                    break;
+                case 8:
+                    pos += sin(90 * rotAngle * position.x) + cos(90 * rotAngle * position.y);
+                    break;
+                }
+
+                switch (r)
+                {
+                case 0:
+                    unityTime = pos;
+                    break;
+                case 1:
+                    position.x = pos;
+                    break;
+                case 2:
+                    position.y = pos;
+                    break;
+                }
+            }
+
+            position.x = position.x * cos(rotAngle) - position.y * sin(rotAngle);
+            position.y = position.x * sin(rotAngle) + position.y * cos(rotAngle);
 
             float4 sinVal = float4 (0,0,0,0);
 
-            int4 sinMathOp = int4 (1,1,1,1);
-            int4 sinMathOther = int4 (1, 1, 1, 1);
+            float4 sinMathOp = float4 (1,1,1,1);
+            float4 sinMathOther = float4 (1, 1, 1, 1);
             float4 sinMathFactor = float4 (1, 1, 1, 1);
-            int4 sinMathInvert = int4 (1, 1, 1, 1);
+            float4 sinMathInvert = float4 (1, 1, 1, 1);
 
-            // The following for calculates each sin operator.
             for (int i = 0; i < 4; i++)
             {
+                float2 oldPos = position;
+
                 float sinInBracketVal = 1; // 1 by default, doesn't need slider.
+                switch (oscMode[i])
+                {
+                case 0:
+                    //funney
+                    break;
+                case 1:
+                    position.x += sinYMultAmt[i] * .005f * sin(20 * position.y);
+                    break;
+                case 2:
+                    position.y += sinXMultAmt[i] * .005f * sin(20 * position.x);
+                    break;
+                }
+
                 if (oscsEnabled[i] == 1)
                 {
                     if (sinXMult[i] == 1)
@@ -206,7 +314,76 @@ Shader "Custom/shadey"
                         sinInBracketVal = sinInBracketVal + sinTimeMultAmt[i] * unityTime;
                     }
 
-                    sinVal[i] = sinAmp[i] * sin(sinInBracketVal * sinFreqMult[i]) + sinAdd[i];
+                    sinInBracketVal *= sinFreqMult[i];
+                    float funnySin = 0;
+                    bool doHarmonic = false;
+
+                    for (float p = 1; p < 100; p++)
+                    {
+                        switch (HarmMode[i])
+                        {
+                            case 0:
+                                doHarmonic = true;
+                                break;
+                            case 1:
+                                if (p % 2 == 0)
+                                {
+                                    doHarmonic = true;
+                                }
+                                break;
+                            case 2:
+                                if (p % 3 == 0)
+                                {
+                                    doHarmonic = true;
+                                }
+                                break;
+                            case 3:
+                                if (p % 4 == 0)
+                                {
+                                    doHarmonic = true;
+                                }
+                                break;
+                            case 4:
+                                if (p % 5 == 0)
+                                {
+                                    doHarmonic = true;
+                                }
+                                break;
+                        }
+
+                        if (HarmInv[i] == 1)
+                        {
+                            if (doHarmonic)
+                            {
+                                doHarmonic = false;
+                            }
+                            else
+                            {
+                                doHarmonic = true;
+                            }
+                        }
+
+                        if (doHarmonic && p <= HarmNum[i])
+                        {
+                            funnySin += (1 / p) * sin(p * sinInBracketVal);
+                        }
+                    }
+
+                    switch (i)
+                    {
+                    case 0:
+                        sinVal.x = sinAmp[i] * funnySin + sinAdd[i];
+                        break;
+                    case 1:
+                        sinVal.y = sinAmp[i] * funnySin + sinAdd[i];
+                        break;
+                    case 2:
+                        sinVal.z = sinAmp[i] * funnySin + sinAdd[i];
+                        break;
+                    case 3:
+                        sinVal.w = sinAmp[i] * funnySin + sinAdd[i];
+                        break;
+                    }
 
                     for (int j = 0; j < 3; j++)
                     {
@@ -245,31 +422,37 @@ Shader "Custom/shadey"
                                 sinMathAmt = position.y;
                                 break;
                             case 3: // sin(time)
-                                sinMathAmt = 0.5f * sin(unityTime) + 0.5f;
+                                sinMathAmt = 0.4f * sin(unityTime) + 0.6f;
                                 break;
                             case 4: // sin(x)
-                                sinMathAmt = 0.5f * sin(position.x) + 0.5f;
+                                sinMathAmt = 0.4f * sin(position.x) + 0.6f;
                                 break;
                             case 5: // sin(x * unityTime)
-                                sinMathAmt = 0.5f * sin(position.x * unityTime) + 0.5f;
+                                sinMathAmt = 0.4f * sin(position.x * unityTime) + 0.6f;
                                 break;
                             case 6: // sin(y)
-                                sinMathAmt = 1 - 0.5f * sin(position.y) + 0.5f;
+                                sinMathAmt = 0.4f * sin(position.y) + 0.6f;
                                 break;
                             case 7: // sin(y * unityTime)
-                                sinMathAmt = 1 - 0.5f * sin(position.y * unityTime) + 0.5f;
+                                sinMathAmt = 0.4f * sin(position.y * unityTime) + 0.6f;
                                 break;
                             case 8: // sin(x * y)
-                                sinMathAmt = 0.5f * sin(position.x * position.y) + 0.5f;
+                                sinMathAmt = 0.4f * sin(position.x * position.y) + 0.6f;
                                 break;
                             case 9: // sin(x * y * unityTime)
-                                sinMathAmt = 0.5f * sin(position.x * position.y) + 0.5f;
+                                sinMathAmt = 0.4f * sin(position.x * position.y * unityTime) + 0.6f;
                                 break;
                             case 10: // sin(y) * sin(x)
-                                sinMathAmt = 0.5f * (sin(position.x) * sin(position.y)) + 0.5f;
+                                sinMathAmt = 0.4f * (sin(position.x) * sin(position.y)) + 0.6f;
                                 break;
                             case 11: // sin(y) * sin(x) * sin(time)
-                                sinMathAmt = 0.5f * (sin(position.x) * sin(position.y) * sin(unityTime)) + 0.5f;
+                                sinMathAmt = 0.4f * (sin(position.x) * sin(position.y) * sin(unityTime)) + 0.6f;
+                                break;
+                            case 12: // inBracketVal
+                                sinMathAmt = 0.4f * sin(sinInBracketVal) + 0.6f;
+                                break;
+                            case 13:
+                                sinMathAmt = nrand(5 * position);
                                 break;
                             }
                         }
@@ -284,51 +467,44 @@ Shader "Custom/shadey"
                         case 0: // noffin
                             break;
                         case 1: // Add
-                            sinVal = sinVal + sinMathAmt * sinMathFactor[i];
+                            sinVal[i] = sinVal + sinMathAmt * sinMathFactor[i];
                             break;
                         case 2: // subtract
-                            sinVal = sinVal - sinMathAmt * sinMathFactor[i];
+                            sinVal[i] = sinVal - sinMathAmt * sinMathFactor[i];
                             break;
                         case 3: // mult
-                            sinVal = sinVal * sinMathAmt * sinMathFactor[i];
+                            sinVal[i] = sinVal * sinMathAmt * sinMathFactor[i];
                             break;
                         case 4: // div
-                            sinVal = sinVal / (sinMathAmt * sinMathFactor[i]);
+                            sinVal[i] = sinVal / clamp((sinMathAmt * sinMathFactor[i]), 0.01f, 99999999);
                             break;
                         case 5: // power
-                            sinVal = pow(sinVal, sinMathAmt * sinMathFactor[i]);
+                            sinVal[i] = pow(sinVal, sinMathAmt * sinMathFactor[i]);
                             break;
                         case 6: // reciprocal power
-                            sinVal = pow(sinVal, 1 / (sinMathAmt * sinMathFactor[i]));
+                            sinVal[i] = pow(sinVal, 1 / clamp((sinMathAmt * sinMathFactor[i]), 0.01f, 99999999));
                             break;
                         case 7: // other power
-                            sinVal = pow(sinMathAmt * sinMathFactor[i], sinVal);
+                            sinVal[i] = pow(sinMathAmt * sinMathFactor[i], sinVal);
                             break;
                         case 8: // other reciprocal power
-                            sinVal = pow(sinMathAmt * sinMathFactor[i], 1 / sinVal);
+                            sinVal[i] = pow(sinMathAmt * sinMathFactor[i], 1 / sinVal);
                             break;
                         case 9: // abs
-                            sinVal = abs(sinVal);
+                            sinVal[i] = abs(sinVal);
                             break;
                         case 10: // round
-                            sinVal = round(sinMathAmt * sinMathFactor[i] * sinVal) / sinMathAmt * sinMathFactor[i];
+                            sinVal[i] = round(sinMathAmt * sinMathFactor[i] * sinVal) / clamp(sinMathAmt * sinMathFactor[i],0.01f,99999999);
                             break;
                         }
 
-                        sinVal[i] = clamp(sinVal[i], 0, 10);
+                        sinVal = clamp(sinVal, -4, 4);
                     }
                 }
+                position = oldPos;
+
+                sinVal[i] = sinVal[i] * finalMult[i] + finalAdd[i];
             }
-            
-<<<<<<< Updated upstream
-            bool cycleColours = true;
-            float colourCycleSpeed = 2;
-            if (cycleColours)
-            {
-                Rval = 0.5f * sin(colourCycleSpeed * (unityTime)) + 0.5f;
-                Gval = 0.5f * sin(colourCycleSpeed * (unityTime + 2 * PI/3)) + 0.5f;
-                Bval = 0.5f * sin(colourCycleSpeed * (unityTime + 4 * PI/3)) + 0.5f;
-=======
             //bool cycleColours = true;
             //float colourCycleSpeed = 2;
             //if (cycleColours)
@@ -338,19 +514,16 @@ Shader "Custom/shadey"
             //    Bval = 0.5f * sin(colourCycleSpeed * (unityTime + 4 * PI/3)) + 0.5f;
             //}
 
-            // Algorithm shit
-            float4 algOrder = float4 (0, 0, 0, 0);
-            float3 algOps = float4 (0, 0, 0, 0);
-            float2 algFinals = float4 (0, 1, 0, 0);
+            float4 algOrder = float4 (0, 1, 2, 3);
+            float4 algOps = float4 (0, 0, 0, 0);
+            float4 algFinals = float4 (0, 1, 0, 0);
             float funcResult = 0;
 
             float4 ampRGB = float4(0, 0, 0, 0);
 
-            // Calculates the Brightness, R, G and B values based on the algorithms determined by the user.
-            for (int k = 0; k < 4; k++) //if (unityTime == -1)//
+            for (int k = 0; k < 4; k++) // K represents whether the shader is looking at the algorithm for brightness, R, G or B.
             {
-                funcResult = 0;
-
+                //int k = 0;
                 switch (k)
                 {
                 case 0:
@@ -383,7 +556,8 @@ Shader "Custom/shadey"
                         funcResult = sinVal[algOrder[0]];
                     }
 
-                    switch (algOps[j])
+
+                    switch (ampAlgOps[j])
                     {
                     case 0: //Add
                         funcResult += sinVal[algOrder[j + 1]];
@@ -400,17 +574,30 @@ Shader "Custom/shadey"
                     }
                 }
 
-                ampRGB[k] = (funcResult + algFinals[0]) * algFinals[1];
->>>>>>> Stashed changes
+                if (algOrder.x == 4)
+                {
+                    funcResult = 1;
+                }
+
+                switch (k)
+                {
+                case 0:
+                    ampRGB.x = funcResult * algFinals[1] + algFinals[0];
+                    break;
+                case 1:
+                    ampRGB.y = funcResult * algFinals[1] + algFinals[0];
+                    break;
+                case 2:
+                    ampRGB.z = funcResult * algFinals[1] + algFinals[0];
+                    break;
+                case 3:
+                    ampRGB.w = funcResult * algFinals[1] + algFinals[0];
+                    break;
+                }
             }
 
-            //ampRGB[0] = sinVal[0] + sinVal[1] + sinVal[2] + sinVal[3];
 
-<<<<<<< Updated upstream
-            o.Albedo = (sinVal[1] + sinVal[0] + sinVal[2] + sinVal[3]) * float3(Rval, Gval, Bval);
-=======
-            o.Albedo = ampRGB[0] * float3(1,1,1);//Rval * ampRGB[1], Gval * ampRGB[2], Bval * ampRGB[3]);
->>>>>>> Stashed changes
+            o.Albedo = clamp(ampRGB[0] * float3(ampRGB[1], ampRGB[2], ampRGB[3]),-8,8);
             //o.Albedo = sin1XMult * float3(Rval, Gval, Bval);
             // Metallic and smoothness come from slider variables
             fixed4 c = tex2D(_MainTex, IN.uv_MainTex) * _Color;
