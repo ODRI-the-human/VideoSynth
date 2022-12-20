@@ -46,11 +46,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 6039435014774857206}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 68c91567aa2e6c842940910f16325fab, type: 3}
+  m_Script: {fileID: 11500000, guid: f66ea6807a54a9140b6db4af312738c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   mattTheSquid: {fileID: 2100000, guid: 008c01534d82af945818179785f7eabd, type: 2}
-  shadey: {fileID: 4800000, guid: 315aab1902f5ea14bbc1ce49fe8c21ad, type: 3}
+  shadey: {fileID: 0}
   master: {fileID: 0}
   oscNumber: 0
+  spritoes: []
   floatVector: {x: 1, y: 1, z: 1, w: 1}
