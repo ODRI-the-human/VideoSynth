@@ -18,7 +18,7 @@ public class modelHandler : MonoBehaviour
         setYScale(0.5f);
         setXOffset(0.5f);
         setYOffset(0.5f);
-        setTScale(0.25f);
+        setTScale(0.5f);
         distModeX(0);
         distModeY(0);
         distModeT(0);
@@ -67,7 +67,7 @@ public class modelHandler : MonoBehaviour
 
     public void setTScale(float value)
     {
-        mattTheSquid.SetFloat("tScale", 4 * value);
+        mattTheSquid.SetFloat("tScale", 20 * value);
     }
 
     public void setXOffset(float value)
