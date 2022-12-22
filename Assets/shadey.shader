@@ -14,7 +14,7 @@ Shader "Custom/shadey"
         _yScale("yScale", Float) = 1
         _xOffset("xOffset", Float) = 0
         _yOffset("yOffset", Float) = 0
-        _tOffset("tOffset", Float) = 1
+        _tScale("tScale", Float) = 1
 
         _oscsEnabled("oscsEnabled", Float) = (1, 0, 0, 0)
 

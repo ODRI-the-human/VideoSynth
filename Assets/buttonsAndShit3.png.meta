@@ -104,32 +104,11 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: buttonsAndShit3_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 496
-        width: 48
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c9c3ed1512eb1374e8f483e72aa76883
-      internalID: -275516391
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: buttonsAndShit3_1
       rect:
         serializedVersion: 2
         x: 0
-        y: 480
+        y: 768
         width: 48
         height: 16
       alignment: 0
@@ -150,7 +129,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 48
-        y: 480
+        y: 768
         width: 48
         height: 16
       alignment: 0
@@ -171,7 +150,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 96
-        y: 480
+        y: 768
         width: 48
         height: 16
       alignment: 0
@@ -192,7 +171,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 144
-        y: 480
+        y: 768
         width: 48
         height: 16
       alignment: 0
@@ -213,7 +192,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 192
-        y: 480
+        y: 768
         width: 48
         height: 16
       alignment: 0
@@ -234,7 +213,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 240
-        y: 480
+        y: 768
         width: 48
         height: 16
       alignment: 0
@@ -255,7 +234,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 288
-        y: 480
+        y: 768
         width: 48
         height: 16
       alignment: 0
@@ -276,7 +255,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 336
-        y: 480
+        y: 768
         width: 48
         height: 16
       alignment: 0
@@ -297,7 +276,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 384
-        y: 480
+        y: 768
         width: 48
         height: 16
       alignment: 0
@@ -318,7 +297,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 464
+        y: 752
         width: 48
         height: 16
       alignment: 0
@@ -339,7 +318,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 48
-        y: 464
+        y: 752
         width: 48
         height: 16
       alignment: 0
@@ -360,7 +339,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 96
-        y: 464
+        y: 752
         width: 48
         height: 16
       alignment: 0
@@ -381,7 +360,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 144
-        y: 464
+        y: 752
         width: 48
         height: 16
       alignment: 0
@@ -402,7 +381,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 192
-        y: 464
+        y: 752
         width: 48
         height: 16
       alignment: 0
@@ -423,7 +402,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 448
+        y: 736
         width: 48
         height: 16
       alignment: 0
@@ -444,7 +423,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 48
-        y: 448
+        y: 736
         width: 48
         height: 16
       alignment: 0
@@ -465,7 +444,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 96
-        y: 448
+        y: 736
         width: 48
         height: 16
       alignment: 0
@@ -486,7 +465,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 144
-        y: 448
+        y: 736
         width: 48
         height: 16
       alignment: 0
@@ -507,7 +486,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 192
-        y: 448
+        y: 736
         width: 48
         height: 16
       alignment: 0
@@ -528,7 +507,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 240
-        y: 448
+        y: 736
         width: 48
         height: 16
       alignment: 0
@@ -549,7 +528,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 288
-        y: 448
+        y: 736
         width: 48
         height: 16
       alignment: 0
@@ -570,7 +549,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 336
-        y: 448
+        y: 736
         width: 48
         height: 16
       alignment: 0
@@ -591,7 +570,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 384
-        y: 448
+        y: 736
         width: 48
         height: 16
       alignment: 0
@@ -612,7 +591,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 432
-        y: 448
+        y: 736
         width: 48
         height: 16
       alignment: 0
@@ -633,7 +612,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 480
-        y: 448
+        y: 736
         width: 48
         height: 16
       alignment: 0
@@ -654,7 +633,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 432
+        y: 720
         width: 48
         height: 16
       alignment: 0
@@ -675,7 +654,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 48
-        y: 432
+        y: 720
         width: 48
         height: 16
       alignment: 0
@@ -696,7 +675,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 96
-        y: 432
+        y: 720
         width: 48
         height: 16
       alignment: 0
@@ -717,7 +696,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 144
-        y: 432
+        y: 720
         width: 48
         height: 16
       alignment: 0
@@ -738,7 +717,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 192
-        y: 432
+        y: 720
         width: 48
         height: 16
       alignment: 0
@@ -759,7 +738,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 240
-        y: 432
+        y: 720
         width: 48
         height: 16
       alignment: 0
@@ -780,7 +759,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 288
-        y: 432
+        y: 720
         width: 48
         height: 16
       alignment: 0
@@ -801,7 +780,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 336
-        y: 432
+        y: 720
         width: 48
         height: 16
       alignment: 0
@@ -822,7 +801,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 384
-        y: 432
+        y: 720
         width: 48
         height: 16
       alignment: 0
@@ -843,7 +822,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 432
-        y: 432
+        y: 720
         width: 48
         height: 16
       alignment: 0
@@ -864,7 +843,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 480
-        y: 432
+        y: 720
         width: 48
         height: 16
       alignment: 0
@@ -885,7 +864,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 528
-        y: 432
+        y: 720
         width: 48
         height: 16
       alignment: 0
@@ -906,7 +885,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 576
-        y: 432
+        y: 720
         width: 48
         height: 16
       alignment: 0
@@ -927,7 +906,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 416
+        y: 704
         width: 48
         height: 16
       alignment: 0
@@ -948,7 +927,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 48
-        y: 416
+        y: 704
         width: 48
         height: 16
       alignment: 0
@@ -969,7 +948,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 96
-        y: 416
+        y: 704
         width: 48
         height: 16
       alignment: 0
@@ -990,7 +969,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 144
-        y: 416
+        y: 704
         width: 48
         height: 16
       alignment: 0
@@ -1011,7 +990,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 192
-        y: 416
+        y: 704
         width: 48
         height: 16
       alignment: 0
@@ -1032,7 +1011,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 240
-        y: 416
+        y: 704
         width: 48
         height: 16
       alignment: 0
@@ -1053,7 +1032,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 288
-        y: 416
+        y: 704
         width: 48
         height: 16
       alignment: 0
@@ -1074,7 +1053,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 400
+        y: 688
         width: 48
         height: 16
       alignment: 0
@@ -1095,7 +1074,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 48
-        y: 400
+        y: 688
         width: 48
         height: 16
       alignment: 0
@@ -1116,7 +1095,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 96
-        y: 400
+        y: 688
         width: 48
         height: 16
       alignment: 0
@@ -1137,7 +1116,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 144
-        y: 400
+        y: 688
         width: 48
         height: 16
       alignment: 0
@@ -1158,7 +1137,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 192
-        y: 400
+        y: 688
         width: 48
         height: 16
       alignment: 0
@@ -1179,7 +1158,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 240
-        y: 400
+        y: 688
         width: 48
         height: 16
       alignment: 0
@@ -1200,7 +1179,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 288
-        y: 400
+        y: 688
         width: 48
         height: 16
       alignment: 0
@@ -1221,7 +1200,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 336
-        y: 400
+        y: 688
         width: 48
         height: 16
       alignment: 0
@@ -1242,7 +1221,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 384
-        y: 400
+        y: 688
         width: 48
         height: 16
       alignment: 0
@@ -1263,7 +1242,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 432
-        y: 400
+        y: 688
         width: 48
         height: 16
       alignment: 0
@@ -1280,11 +1259,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: buttonsAndShit3_56
+      name: buttonsAndShit3_0
       rect:
         serializedVersion: 2
-        x: 480
-        y: 400
+        x: 0
+        y: 784
         width: 48
         height: 16
       alignment: 0
@@ -1294,8 +1273,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c9d932ffe00e2c64ab06545ce6cab580
-      internalID: 364742062
+      spriteID: c3c7058597d46fd499abe6cd3917939b
+      internalID: -275516391
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buttonsAndShit3_56
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 688
+        width: 48
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9790bb27705c3f249b6d86d64a5cd2fb
+      internalID: 464058499
       vertices: []
       indices: 
       edges: []
@@ -1305,7 +1305,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 528
-        y: 400
+        y: 688
         width: 48
         height: 16
       alignment: 0
@@ -1315,8 +1315,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6b0a5f49fd377fa428bc9dcd25644638
-      internalID: -1460504463
+      spriteID: 46200a26d8bfbf54cae5fdd5d4191320
+      internalID: 734860056
       vertices: []
       indices: 
       edges: []
@@ -1326,7 +1326,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 576
-        y: 400
+        y: 688
         width: 48
         height: 16
       alignment: 0
@@ -1336,8 +1336,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 73c439b3207dee84aa20b03fe8e942a1
-      internalID: -1548979939
+      spriteID: 81bdfbf179ed6ea4d861baf3f4d7be7d
+      internalID: 1612218713
       vertices: []
       indices: 
       edges: []
@@ -1347,7 +1347,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 624
-        y: 400
+        y: 688
         width: 48
         height: 16
       alignment: 0
@@ -1357,8 +1357,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8db000d69ad77df4d8abf3c42f005747
-      internalID: -982904030
+      spriteID: 69eecff6d93d20948a934721c6881647
+      internalID: -67636433
       vertices: []
       indices: 
       edges: []
@@ -1368,7 +1368,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 672
-        y: 400
+        y: 688
         width: 48
         height: 16
       alignment: 0
@@ -1378,8 +1378,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b2944d03cb262fe469b7ec0929d50c6c
-      internalID: -545460097
+      spriteID: b869cbde7e7a32e429f4f17123205f8b
+      internalID: 1291027488
       vertices: []
       indices: 
       edges: []
@@ -1389,7 +1389,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 384
+        y: 672
         width: 48
         height: 16
       alignment: 0
@@ -1399,8 +1399,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9ccf063ca63d5494ea00c98d6e52bae1
-      internalID: 1762734911
+      spriteID: 33c46d8a1e8a9114b86c76b99480d6cb
+      internalID: -709984840
       vertices: []
       indices: 
       edges: []
@@ -1410,7 +1410,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 48
-        y: 384
+        y: 672
         width: 48
         height: 16
       alignment: 0
@@ -1420,8 +1420,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ae51bf82ef06a854aa4fb5dd9b5c0688
-      internalID: 1129929911
+      spriteID: e70055b3ae7fbad41bda0bfd16f49d81
+      internalID: -75246808
       vertices: []
       indices: 
       edges: []
@@ -1431,7 +1431,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 96
-        y: 384
+        y: 672
         width: 48
         height: 16
       alignment: 0
@@ -1441,8 +1441,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 790166ceb0d88d94c8b3b75b2242ffaa
-      internalID: 916093726
+      spriteID: 321c6cadd34500f48aa1cebb534fd58d
+      internalID: 1560055015
       vertices: []
       indices: 
       edges: []
@@ -1452,7 +1452,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 144
-        y: 384
+        y: 672
         width: 48
         height: 16
       alignment: 0
@@ -1462,8 +1462,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 19ce9e6c701f43341b17b87ef90ead95
-      internalID: 1341177432
+      spriteID: 2b51b2217e36c5e428e9f3a2409d0dc2
+      internalID: -1085030133
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buttonsAndShit3_65
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 656
+        width: 48
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e51ba27977b91f24198b016139b876fe
+      internalID: 287983471
       vertices: []
       indices: 
       edges: []
@@ -1482,11 +1503,12 @@ TextureImporter:
       buttonsAndShit3_12: 957465680
       buttonsAndShit3_33: 366654013
       buttonsAndShit3_43: 2111809893
-      buttonsAndShit3_64: 1341177432
+      buttonsAndShit3_64: -1085030133
       buttonsAndShit3_30: -768207079
       buttonsAndShit3_34: -2005778870
       buttonsAndShit3_10: 1420559965
       buttonsAndShit3_29: -1992697324
+      buttonsAndShit3_65: 287983471
       buttonsAndShit3_14: 187749550
       buttonsAndShit3_16: -732658789
       buttonsAndShit3_48: 830703083
@@ -1503,7 +1525,7 @@ TextureImporter:
       buttonsAndShit3_20: -12739754
       buttonsAndShit3_40: -85382961
       buttonsAndShit3_54: 1309067618
-      buttonsAndShit3_59: -982904030
+      buttonsAndShit3_59: -67636433
       buttonsAndShit3_5: 90480743
       buttonsAndShit3_35: -359855264
       buttonsAndShit3_41: -2066360382
@@ -1511,23 +1533,23 @@ TextureImporter:
       buttonsAndShit3_13: 42737550
       buttonsAndShit3_42: 1873353604
       buttonsAndShit3_24: 1195078386
-      buttonsAndShit3_56: 364742062
+      buttonsAndShit3_56: 464058499
       buttonsAndShit3_27: 1991630206
       buttonsAndShit3_4: -549297679
       buttonsAndShit3_21: -1081382248
       buttonsAndShit3_52: -1979546680
       buttonsAndShit3_51: -1231400485
-      buttonsAndShit3_60: -545460097
+      buttonsAndShit3_60: 1291027488
       buttonsAndShit3_25: -1075426378
       buttonsAndShit3_47: 240097890
-      buttonsAndShit3_63: 916093726
+      buttonsAndShit3_63: 1560055015
       buttonsAndShit3_31: -1730721148
       buttonsAndShit3_11: 186205572
       buttonsAndShit3_38: -916729047
       buttonsAndShit3_36: 1157218275
       buttonsAndShit3_32: 1354825073
       buttonsAndShit3_3: 1688879559
-      buttonsAndShit3_58: -1548979939
+      buttonsAndShit3_58: 1612218713
       buttonsAndShit3_15: -1732239394
       buttonsAndShit3_53: 217819283
       buttonsAndShit3_50: 746556818
@@ -1536,12 +1558,12 @@ TextureImporter:
       buttonsAndShit3_2: 316574187
       buttonsAndShit3_49: -1888506745
       buttonsAndShit3_23: -690346434
-      buttonsAndShit3_61: 1762734911
+      buttonsAndShit3_61: -709984840
       buttonsAndShit3_26: -704397255
-      buttonsAndShit3_57: -1460504463
+      buttonsAndShit3_57: 734860056
       buttonsAndShit3_7: 129044534
       buttonsAndShit3_18: 178773223
-      buttonsAndShit3_62: 1129929911
+      buttonsAndShit3_62: -75246808
       buttonsAndShit3_28: -1262864723
       buttonsAndShit3_45: 1870936620
   spritePackingTag: 
