@@ -336,10 +336,8 @@ public class things : MonoBehaviour
 
     void FixedUpdate()
     {
-        Debug.Log("nightmare city");
         if (steps[currentStep])
         {
-            Debug.Log("cock life");
             Instantiate(funnyFarts[Random.Range(0, 4)]);
             lastTrigTime = Time.time;
         }

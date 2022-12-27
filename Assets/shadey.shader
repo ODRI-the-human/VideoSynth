@@ -467,34 +467,34 @@ Shader "Custom/shadey"
                         case 0: // noffin
                             break;
                         case 1: // Add
-                            sinVal[i] = sinVal + sinMathAmt * sinMathFactor[i];
+                            sinVal[i] = sinVal[i] + sinMathAmt * sinMathFactor[i];
                             break;
                         case 2: // subtract
-                            sinVal[i] = sinVal - sinMathAmt * sinMathFactor[i];
+                            sinVal[i] = sinVal[i] - sinMathAmt * sinMathFactor[i];
                             break;
                         case 3: // mult
-                            sinVal[i] = sinVal * sinMathAmt * sinMathFactor[i];
+                            sinVal[i] = sinVal[i] * sinMathAmt * sinMathFactor[i];
                             break;
                         case 4: // div
-                            sinVal[i] = sinVal / clamp((sinMathAmt * sinMathFactor[i]), 0.01f, 99999999);
+                            sinVal[i] = sinVal[i] / clamp((sinMathAmt * sinMathFactor[i]), 0.01f, 99999999);
                             break;
                         case 5: // power
-                            sinVal[i] = pow(sinVal, sinMathAmt * sinMathFactor[i]);
+                            sinVal[i] = pow(sinVal[i], sinMathAmt * sinMathFactor[i]);
                             break;
                         case 6: // reciprocal power
-                            sinVal[i] = pow(sinVal, 1 / clamp((sinMathAmt * sinMathFactor[i]), 0.01f, 99999999));
+                            sinVal[i] = pow(sinVal[i], 1 / clamp((sinMathAmt * sinMathFactor[i]), 0.01f, 99999999));
                             break;
                         case 7: // other power
-                            sinVal[i] = pow(sinMathAmt * sinMathFactor[i], sinVal);
+                            sinVal[i] = pow(sinMathAmt * sinMathFactor[i], sinVal[i]);
                             break;
                         case 8: // other reciprocal power
-                            sinVal[i] = pow(sinMathAmt * sinMathFactor[i], 1 / sinVal);
+                            sinVal[i] = pow(sinMathAmt * sinMathFactor[i], 1 / sinVal[i]);
                             break;
                         case 9: // abs
-                            sinVal[i] = abs(sinVal);
+                            sinVal[i] = abs(sinVal[i]);
                             break;
                         case 10: // round
-                            sinVal[i] = round(sinMathAmt * sinMathFactor[i] * sinVal) / clamp(sinMathAmt * sinMathFactor[i],0.01f,99999999);
+                            sinVal[i] = round(sinMathAmt * sinMathFactor[i] * sinVal[i]) / clamp(sinMathAmt * sinMathFactor[i],0.01f,99999999);
                             break;
                         }
 
