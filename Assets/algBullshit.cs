@@ -12,9 +12,9 @@ public class algBullshit : MonoBehaviour
     void Start()
     {
         setAmpOrder1(0);
-        setAmpOrder2(1);
-        setAmpOrder3(2);
-        setAmpOrder4(3);
+        setAmpOrder2(4);
+        setAmpOrder3(4);
+        setAmpOrder4(4);
         setAmpOps1(0);
         setAmpOps2(0);
         setAmpOps3(0);
