@@ -34,9 +34,11 @@ public class things : MonoBehaviour
     float totalTimeAdded = 0;
     float greenPow = 0;
 
-    public float BPM = 120;
+    float BPM = 150;
     public float beatDelay;
     public int BPMCheckRes = 100;
+
+    int totalStepNos = 64;
 
     public float envVal;
 
@@ -59,7 +61,7 @@ public class things : MonoBehaviour
         beatDelay = 60 / BPM;
         Time.timeScale = 4 / (50 * beatDelay);
 
-        for (int i = 0; i < 16; i++)
+        for (int i = 0; i < totalStepNos; i++)
         {
             steps.Add(false);
         }
@@ -343,7 +345,7 @@ public class things : MonoBehaviour
         }
         currentStep++;
 
-        if (currentStep == steps.Count)
+        if (currentStep == totalStepNos)
         {
             currentStep = 0;
         }
