@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
 using UnityEngine.UI;
+using UnityEngine.InputSystem;
+
 
 
 
@@ -67,24 +69,9 @@ public class things : MonoBehaviour
         }
     }
 
-    void Update()
+    public void Restart()
     {
-        if (Input.GetButtonDown("Restart"))
-        {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        }
-
-        if (Input.GetButtonDown("Hide"))
-        {
-            if (canvas.GetComponent<CanvasScaler>().scaleFactor == 1)
-            {
-                canvas.GetComponent<CanvasScaler>().scaleFactor = 0;
-            }
-            else
-            {
-                canvas.GetComponent<CanvasScaler>().scaleFactor = 1;
-            }
-        }
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     void LateUpdate()
@@ -113,19 +100,8 @@ public class things : MonoBehaviour
         timeToResample--;
 
         theUnityTime = Time.time + totalTimeAdded;
-        //float deltaTime = (theUnityTime - lastTime) * timeAccel;
-        //totalTimeAdded += deltaTime;
-        //float newTime = lastTime + deltaTime;
         mattTheSquid.SetFloat("unityTime", theUnityTime);
-
-        //greenPow /= 1.2f;
-        //float prevVal = mattTheSquid.GetFloat("xOffset");
-        //float valToPass = greenPow + prevVal;
-        //mattTheSquid.SetFloat("xOffset", valToPass);
-
         timeAccel /= 1.1f;
-        //timeAccel = Mathf.Clamp(timeAccel, 0.03f, 900);
-
         lastTime = Time.time + totalTimeAdded;
 
         // Sending envelope values to their sources.
@@ -336,12 +312,25 @@ public class things : MonoBehaviour
         }
     }
 
+    public void OnTrigger(InputAction.CallbackContext context)
+    {
+        if (context.started)
+        {
+            TrigModSources();
+        }
+    }
+
+    public void TrigModSources()
+    {
+        lastTrigTime = Time.time;
+        Debug.Log("Not gaslit");
+    }
+
     void FixedUpdate()
     {
         if (steps[currentStep])
         {
-            Instantiate(funnyFarts[Random.Range(0, 4)]);
-            lastTrigTime = Time.time;
+            TrigModSources();
         }
         currentStep++;
 

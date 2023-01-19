@@ -198,6 +198,9 @@ Shader "Custom/shadey"
 
             position = round(position * (4096 - pixelateAmt)) / (4096 - pixelateAmt);
 
+            position.x = (position.x - 0.5f) * cos(rotAngle) - (position.y - 0.5f) * sin(rotAngle);
+            position.y = (position.x - 0.5f) * sin(rotAngle) + (position.y - 0.5f) * cos(rotAngle);
+
             position.x += xOffset;
             position.y += yOffset;
 
@@ -270,9 +273,6 @@ Shader "Custom/shadey"
                     break;
                 }
             }
-
-            position.x = position.x * cos(rotAngle) - position.y * sin(rotAngle);
-            position.y = position.x * sin(rotAngle) + position.y * cos(rotAngle);
 
             float4 sinVal = float4 (0,0,0,0);
 
@@ -505,22 +505,16 @@ Shader "Custom/shadey"
 
                 sinVal[i] = sinVal[i] * finalMult[i] + finalAdd[i];
             }
-            //bool cycleColours = true;
-            //float colourCycleSpeed = 2;
-            //if (cycleColours)
-            //{
-            //    Rval = 0.5f * sin(colourCycleSpeed * (unityTime)) + 0.5f;
-            //    Gval = 0.5f * sin(colourCycleSpeed * (unityTime + 2 * PI/3)) + 0.5f;
-            //    Bval = 0.5f * sin(colourCycleSpeed * (unityTime + 4 * PI/3)) + 0.5f;
-            //}
 
+            //sinVal.x = position.x;
+
+            // Algorithmz
             float4 algOrder = float4 (0, 1, 2, 3);
             float4 algOps = float4 (0, 0, 0, 0);
             float4 algFinals = float4 (0, 1, 0, 0);
             float funcResult = 0;
-
             float4 ampRGB = float4(0, 0, 0, 0);
-
+            
             for (int k = 0; k < 4; k++) // K represents whether the shader is looking at the algorithm for brightness, R, G or B.
             {
                 //int k = 0;
@@ -598,8 +592,6 @@ Shader "Custom/shadey"
 
 
             o.Albedo = clamp(ampRGB[0] * float3(ampRGB[1], ampRGB[2], ampRGB[3]),-8,8);
-            //o.Albedo = sin1XMult * float3(Rval, Gval, Bval);
-            // Metallic and smoothness come from slider variables
             fixed4 c = tex2D(_MainTex, IN.uv_MainTex) * _Color;
             o.Metallic = _Metallic;
             o.Smoothness = _Glossiness;
