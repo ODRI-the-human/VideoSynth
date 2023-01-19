@@ -46,6 +46,8 @@ public class things : MonoBehaviour
 
     float lastTime = 0;
 
+    public bool doSequence = true;
+
     public int[] sequencerSends = new int[4]{ 0, 0, 0, 0};
     public float[] sendInit = new float[4] { 1, 1, 1, 1 };
     public float[] sendFinal = new float[4] { 1, 0, 0, 0 };
@@ -328,15 +330,19 @@ public class things : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (steps[currentStep])
+        if (doSequence)
         {
-            TrigModSources();
-        }
-        currentStep++;
+            if (steps[currentStep])
+            {
+                TrigModSources();
+            }
 
-        if (currentStep == totalStepNos)
-        {
-            currentStep = 0;
+            currentStep++;
+
+            if (currentStep >= totalStepNos)
+            {
+                currentStep = 0;
+            }
         }
     }
 }
