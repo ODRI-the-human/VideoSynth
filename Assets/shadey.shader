@@ -80,6 +80,8 @@ Shader "Custom/shadey"
 
         _oscMode("oscMode", Float) = (0,0,0,0)
         _rotAngle("rotAngle", Float) = 0
+        _postDistRotAngle("postDistRotAngle", Float) = 0
+        _allScale("allScale", Float) = 1
         _pixelateAmt("pixellateAmt", Float) = 0
     }
     SubShader
@@ -113,8 +115,10 @@ Shader "Custom/shadey"
 
         float nrand(float2 uv)
         {
-            return frac(sin(dot(uv, float2(12.9898, 78.233))) * 43758.5453 * unityTime);
+            return frac(sin(dot(5 * uv, float2(12.9898, 78.233))) * 43758.5453 * sin(unityTime));
         }
+
+        
 
         // Add instancing support for this shader. You need to check 'Enable Instancing' on materials that use the shader.
         // See https://docs.unity3d.com/Manual/GPUInstancing.html for more information about instancing.
@@ -190,16 +194,21 @@ Shader "Custom/shadey"
 
         float4 oscMode = (0, 0, 0, 0);
         float rotAngle = 0;
+        float postDistRotAngle = 0;
+        float allScale = 1;
         float pixelateAmt = 0;
 
         void surf (Input IN, inout SurfaceOutputStandard o)
         {
-            float2 position = IN.uv_MainTex;
+            float2 position = allScale * IN.uv_MainTex;
 
             position = round(position * (4096 - pixelateAmt)) / (4096 - pixelateAmt);
 
-            position.x = (position.x - 0.5f) * cos(rotAngle) - (position.y - 0.5f) * sin(rotAngle);
-            position.y = (position.x - 0.5f) * sin(rotAngle) + (position.y - 0.5f) * cos(rotAngle);
+            float orgPosx = position.x - 0.5f;
+            float orgPosy = position.y - 0.5f;
+
+            position.x = orgPosx * cos(postDistRotAngle) - orgPosy * sin(postDistRotAngle);
+            position.y = orgPosx * sin(postDistRotAngle) + orgPosy * cos(postDistRotAngle);
 
             position.x += xOffset;
             position.y += yOffset;
@@ -272,6 +281,12 @@ Shader "Custom/shadey"
                     position.y = pos;
                     break;
                 }
+
+                float dorgPosx = position.x - 0.5f;
+                float dorgPosy = position.y - 0.5f;
+
+                position.x = dorgPosx * cos(rotAngle) - dorgPosy * sin(rotAngle);
+                position.y = dorgPosx * sin(rotAngle) + dorgPosy * cos(rotAngle);
             }
 
             float4 sinVal = float4 (0,0,0,0);
@@ -296,6 +311,20 @@ Shader "Custom/shadey"
                     break;
                 case 2:
                     position.y += sinXMultAmt[i] * .005f * sin(20 * position.x);
+                    break;
+                case 3:
+                    position.x += round(position.y * sinYMultAmt[i]) / sinYMultAmt[i];
+                    break;
+                case 4:
+                    position.x += round(position.y * sinYMultAmt[i]) / sinYMultAmt[i];
+                    break;
+                case 5:
+                    position.x += round(position.y * sinYMultAmt[i]) / sinYMultAmt[i];
+                    position.y += round(position.x * sinXMultAmt[i]) / sinXMultAmt[i];
+                    break;
+                case 6:
+                    position.x = (position.x - 0.5f) * round(cos(position.x) * sinYMultAmt[i]) / sinYMultAmt[i] - (position.y - 0.5f) * round(sin(position.x) * sinYMultAmt[i]) / sinYMultAmt[i];
+                    position.y = (position.y - 0.5f) * round(cos(position.y) * sinXMultAmt[i]) / sinXMultAmt[i] - (position.x - 0.5f) * round(sin(position.y) * sinXMultAmt[i]) / sinXMultAmt[i];
                     break;
                 }
 
@@ -452,7 +481,7 @@ Shader "Custom/shadey"
                                 sinMathAmt = 0.4f * sin(sinInBracketVal) + 0.6f;
                                 break;
                             case 13:
-                                sinMathAmt = nrand(5 * position);
+                                sinMathAmt = nrand(0.5f * position);
                                 break;
                             }
                         }
@@ -495,6 +524,12 @@ Shader "Custom/shadey"
                             break;
                         case 10: // round
                             sinVal[i] = round(sinMathAmt * sinMathFactor[i] * sinVal[i]) / clamp(sinMathAmt * sinMathFactor[i],0.01f,99999999);
+                            break;
+                        case 11: // clampMin
+                            sinVal[i] = clamp(sinVal[i], sinMathAmt * sinMathFactor[i], 999);
+                            break;
+                        case 12: // clampMax
+                            sinVal[i] = clamp(-999, sinVal[i], sinMathAmt * sinMathFactor[i]);
                             break;
                         }
 

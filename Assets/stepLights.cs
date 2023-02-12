@@ -20,6 +20,11 @@ public class stepLights : MonoBehaviour
             child.gameObject.GetComponent<stepSequencer>().stepNo = lightNoToAssign;
             lightNoToAssign++;
         }
+
+        foreach (GameObject light in lights)
+        {
+            light.GetComponent<Image>().sprite = epics[0];
+        }
     }
 
     void Update()

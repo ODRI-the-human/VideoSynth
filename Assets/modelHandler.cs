@@ -24,9 +24,21 @@ public class modelHandler : MonoBehaviour
         distModeT(0);
         pixelateAmt(0);
         rotate(0);
+        rotatePost(0);
+        allScale(0.333f);
     }
 
 
+
+    public void rotatePost(float value)
+    {
+        mattTheSquid.SetFloat("postDistRotAngle", 2 * Mathf.PI * value);
+    }
+
+    public void allScale(float value)
+    {
+        mattTheSquid.SetFloat("allScale", Mathf.Pow(3.333f * value, 2));
+    }
 
 
     public void distModeX(int value)
@@ -50,7 +62,7 @@ public class modelHandler : MonoBehaviour
     }
     public void rotate(float value)
     {
-        mattTheSquid.SetFloat("rotAngle", 2 * Mathf.PI * value);
+        mattTheSquid.SetFloat("rotAngle", .66666f * Mathf.PI * value);
     }
 
 

@@ -1006,6 +1006,132 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: cock world_43
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 765
+        width: 48
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4c534ae900cfb1468c3a9f2951db9ae
+      internalID: 1745221101
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cock world_44
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 765
+        width: 48
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9892f9fab8aacb419b033d2e60088b4
+      internalID: -201303906
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cock world_45
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 765
+        width: 48
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 434bc519eddbfe142b855c4b34342c08
+      internalID: 75279299
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cock world_46
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 765
+        width: 48
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8a36628ea0d5bf49985a5d098a809e8
+      internalID: -130465116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cock world_47
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 765
+        width: 48
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf17b3a28f3332e478805897bbec0b28
+      internalID: -1034628868
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cock world_48
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 765
+        width: 48
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51c94adfa6a0e2340ab89ca7d49b7494
+      internalID: -340797474
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -1021,6 +1147,9 @@ TextureImporter:
       cock world_10: 74493614
       cock world_15: -714475962
       cock world_34: -893358720
+      cock world_45: 75279299
+      cock world_43: 1745221101
+      cock world_48: -340797474
       cock world_11: 878747152
       cock world_24: 456343384
       cock world_37: 1397573291
@@ -1046,15 +1175,18 @@ TextureImporter:
       cock world_19: -1887441636
       cock world_32: -698712427
       cock world_22: -3684147
+      cock world_46: -130465116
       cock world_41: 696043778
       cock world_21: -69501022
       cock world_30: -1068310872
       cock world_39: 963014872
       cock world_40: -17715152
+      cock world_44: -201303906
       cock world_42: -1935892985
       cock world_27: 890557478
       cock world_33: 1589262120
       cock world_29: 763905671
+      cock world_47: -1034628868
       cock world_12: -601082312
       cock world_16: -516160937
       cock world_0: -1857825256
