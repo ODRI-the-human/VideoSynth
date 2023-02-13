@@ -83,6 +83,10 @@ Shader "Custom/shadey"
         _postDistRotAngle("postDistRotAngle", Float) = 0
         _allScale("allScale", Float) = 1
         _pixelateAmt("pixellateAmt", Float) = 0
+
+        _finalMathOp("finalMathOp", Float) = (0, 0, 0, 0)
+        _finalMathFactor("finalMathFactor", Float) = (0, 0, 0, 0)
+        _finalMathSendToChannels("finalMathSendToChannels", Float) = (0, 0, 0, 0)
     }
     SubShader
     {
@@ -197,6 +201,10 @@ Shader "Custom/shadey"
         float postDistRotAngle = 0;
         float allScale = 1;
         float pixelateAmt = 0;
+
+        float2 finalMathOp = (0, 0);
+        float2 finalMathFactor = (1, 1);
+        float4 finalMathSendToChannels = (0, 0, 0, 0);
 
         void surf (Input IN, inout SurfaceOutputStandard o)
         {
@@ -625,7 +633,94 @@ Shader "Custom/shadey"
                 }
             }
 
+            for (int m = 0; m < 4; m++)
+            {
+                for (int s = 0; s < 2; s++)
+                {
+                    int spinMathOp = finalMathOp[s];
+                    float spinMathFactor = finalMathFactor[s];
 
+                    float thingToFuck = 0;
+
+                    if (finalMathSendToChannels[m] != 0)
+                    {
+                        switch (m)
+                        {
+                        case 0:
+                            thingToFuck = ampRGB.x;
+                            break;
+                        case 1:
+                            thingToFuck = ampRGB.y;
+                            break;
+                        case 2:
+                            thingToFuck = ampRGB.z;
+                            break;
+                        case 3:
+                            thingToFuck = ampRGB.w;
+                            break;
+                        }
+
+                        switch (spinMathOp)
+                        {
+                        case 0: // noffin
+                            break;
+                        case 1: // Add
+                            thingToFuck = thingToFuck + spinMathFactor;
+                            break;
+                        case 2: // subtract
+                            thingToFuck = thingToFuck - spinMathFactor;
+                            break;
+                        case 3: // mult
+                            thingToFuck = thingToFuck * spinMathFactor;
+                            break;
+                        case 4: // div
+                            thingToFuck = thingToFuck / clamp((spinMathFactor), 0.01f, 99999999);
+                            break;
+                        case 5: // power
+                            thingToFuck = pow(thingToFuck, spinMathFactor);
+                            break;
+                        case 6: // reciprocal power
+                            thingToFuck = pow(thingToFuck, 1 / clamp((spinMathFactor), 0.01f, 99999999));
+                            break;
+                        case 7: // other power
+                            thingToFuck = pow(spinMathFactor, thingToFuck);
+                            break;
+                        case 8: // other reciprocal power
+                            thingToFuck = pow(spinMathFactor, 1 / thingToFuck);
+                            break;
+                        case 9: // abs
+                            thingToFuck = abs(thingToFuck);
+                            break;
+                        case 10: // round
+                            thingToFuck = round(spinMathFactor * thingToFuck) / clamp(spinMathFactor, 0.01f, 99999999);
+                            break;
+                        case 11: // clampMin
+                            thingToFuck = clamp(thingToFuck, spinMathFactor, 999);
+                            break;
+                        case 12: // clampMax
+                            thingToFuck = clamp(-999, thingToFuck, spinMathFactor);
+                            break;
+                        }
+
+                        switch (m)
+                        {
+                        case 0:
+                            ampRGB.x = thingToFuck;
+                            break;
+                        case 1:
+                            ampRGB.y = thingToFuck;
+                            break;
+                        case 2:
+                            ampRGB.z = thingToFuck;
+                            break;
+                        case 3:
+                            ampRGB.w = thingToFuck;
+                            break;
+                        }
+                    }
+                }
+            }
+            
             o.Albedo = clamp(ampRGB[0] * float3(ampRGB[1], ampRGB[2], ampRGB[3]),-8,8);
             fixed4 c = tex2D(_MainTex, IN.uv_MainTex) * _Color;
             o.Metallic = _Metallic;

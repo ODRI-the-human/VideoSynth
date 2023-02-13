@@ -12,6 +12,8 @@ public class modelHandler : MonoBehaviour
     public Shader shadey;
     public GameObject master;
 
+    public Vector4 floatVector = new Vector4(1, 1, 1, 1);
+
     void Start()
     {
         setXScale(0.5f);
@@ -26,6 +28,86 @@ public class modelHandler : MonoBehaviour
         rotate(0);
         rotatePost(0);
         allScale(0.333f);
+
+        finalMathEnableChannel1(false);
+        finalMathEnableChannel2(false);
+        finalMathEnableChannel3(false);
+        finalMathEnableChannel4(false);
+        finalMath1Fac(0);
+        finalMath2Fac(0);
+        finalMath1OpChange(0);
+        finalMath2OpChange(0);
+    }
+
+
+    void setAFloat(string var, float val, int num)
+    {
+        floatVector = mattTheSquid.GetVector(var);
+        Debug.Log(var + ", " + val.ToString() + ", " + floatVector.ToString());
+        floatVector[num] = val;
+        mattTheSquid.SetVector(var, floatVector);
+    }
+
+
+    public void finalMath1Fac(float value)
+    {
+        setAFloat("finalMathFactor", Mathf.Pow(7 * value, 2), 0);
+    }
+    public void finalMath2Fac(float value)
+    {
+        setAFloat("finalMathFactor", Mathf.Pow(7 * value, 2), 1);
+    }
+    public void finalMath1OpChange(int value)
+    {
+        setAFloat("finalMathOp", value, 0);
+    }
+    public void finalMath2OpChange(int value)
+    {
+        setAFloat("finalMathOp", value, 1);
+    }
+    public void finalMathEnableChannel1(bool tog)
+    {
+        if (tog)
+        {
+            setAFloat("finalMathSendToChannels", 1, 0);
+        }
+        else
+        {
+            setAFloat("finalMathSendToChannels", 0, 0);
+        }
+    }
+    public void finalMathEnableChannel2(bool tog)
+    {
+        if (tog)
+        {
+            setAFloat("finalMathSendToChannels", 1, 1);
+        }
+        else
+        {
+            setAFloat("finalMathSendToChannels", 0, 1);
+        }
+    }
+    public void finalMathEnableChannel3(bool tog)
+    {
+        if (tog)
+        {
+            setAFloat("finalMathSendToChannels", 1, 2);
+        }
+        else
+        {
+            setAFloat("finalMathSendToChannels", 0, 2);
+        }
+    }
+    public void finalMathEnableChannel4(bool tog)
+    {
+        if (tog)
+        {
+            setAFloat("finalMathSendToChannels", 1, 3);
+        }
+        else
+        {
+            setAFloat("finalMathSendToChannels", 0, 3);
+        }
     }
 
 
