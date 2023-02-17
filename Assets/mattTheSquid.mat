@@ -40,6 +40,10 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _FeedbackTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _MainTex:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -76,13 +80,16 @@ Material:
     - _UVSec: 0
     - _Width: 2
     - _ZWrite: 1
+    - _allScale: 1
     - _distModeT: 0
     - _distModeX: 0
     - _distModeY: 0
     - _oscMode: 0
     - _pixelateAmt: 0
+    - _postDistRotAngle: 0
     - _rotAngle: 3
     - _tOffset: 1
+    - _tScale: 1
     - _unityTime: 0
     - _xOffset: 0
     - _xScale: 1
@@ -108,6 +115,9 @@ Material:
     - _ampAlgOps: {r: 1, g: 1, b: 1, a: 0}
     - _ampAlgOrder: {r: 0, g: 1, b: 2, a: 3}
     - _finalAdd: {r: 0, g: 0, b: 0, a: 0}
+    - _finalMathFactor: {r: 0, g: 0, b: 0, a: 0}
+    - _finalMathOp: {r: 0, g: 0, b: 0, a: 0}
+    - _finalMathSendToChannels: {r: 0, g: 0, b: 0, a: 0}
     - _finalMult: {r: 1, g: 1, b: 1, a: 1}
     - _oscMode: {r: 0, g: 0, b: 0, a: 0}
     - _oscsEnabled: {r: 1, g: 0, b: 0, a: 0}

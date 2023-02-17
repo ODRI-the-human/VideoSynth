@@ -4,6 +4,7 @@ Shader "Custom/shadey"
     {
         _Color("Color", Color) = (1,1,1,1)
         _MainTex("Albedo (RGB)", 2D) = "white" {}
+        _FeedbackTex("whomble", 2D) = "white" {}
         _Glossiness("Smoothness", Range(0,1)) = 0.5
         _Metallic("Metallic", Range(0,1)) = 0.0
         _Width("Width", Float) = 2
@@ -87,6 +88,9 @@ Shader "Custom/shadey"
         _finalMathOp("finalMathOp", Float) = (0, 0, 0, 0)
         _finalMathFactor("finalMathFactor", Float) = (0, 0, 0, 0)
         _finalMathSendToChannels("finalMathSendToChannels", Float) = (0, 0, 0, 0)
+
+        _feedbackAmt("feedbackAmt", Float) = 0
+        _finalFinalFinalOut("finalFinalFinalOut", Float) = 1
     }
     SubShader
     {
@@ -205,6 +209,12 @@ Shader "Custom/shadey"
         float2 finalMathOp = (0, 0);
         float2 finalMathFactor = (1, 1);
         float4 finalMathSendToChannels = (0, 0, 0, 0);
+
+        sampler2D whomble;
+        float feedbackAmt = 0;
+        float finalFinalFinalOut = 1;
+
+
 
         void surf (Input IN, inout SurfaceOutputStandard o)
         {
@@ -633,6 +643,7 @@ Shader "Custom/shadey"
                 }
             }
 
+            // final math
             for (int m = 0; m < 4; m++)
             {
                 for (int s = 0; s < 2; s++)
@@ -721,12 +732,17 @@ Shader "Custom/shadey"
                 }
             }
             
-            o.Albedo = clamp(ampRGB[0] * float3(ampRGB[1], ampRGB[2], ampRGB[3]),-8,8);
+            float4 fuckHead = tex2D(whomble, IN.uv_MainTex);
+            float3 flimHead = float3(fuckHead.x, fuckHead.y, fuckHead.z);
+
+            o.Albedo = finalFinalFinalOut * (feedbackAmt * flimHead + clamp(ampRGB[0] * float3(ampRGB[1], ampRGB[2], ampRGB[3]), 0, 8));
+
             fixed4 c = tex2D(_MainTex, IN.uv_MainTex) * _Color;
             o.Metallic = _Metallic;
             o.Smoothness = _Glossiness;
-            o.Alpha = c.a;
+            o.Alpha = 1;
         }
+
         ENDCG
     }
     FallBack "Diffuse"

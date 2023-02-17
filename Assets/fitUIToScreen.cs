@@ -75,35 +75,5 @@ public class fitUIToScreen : MonoBehaviour
         {
             buttonIsHeld = false;
         }
-
-        //if (Input.GetButtonDown("Up"))
-        //{
-        //    yMov++;
-        //}
-
-            //if (Input.GetButtonDown("Down"))
-            //{
-            //    yMov--;
-            //}
-
-            //if (Input.GetButtonDown("Left"))
-            //{
-            //    xMov--;
-            //}
-
-            //if (Input.GetButtonDown("Right"))
-            //{
-            //    xMov++;
-            //}
-
-            //if (Input.GetButtonDown("ScaleUp"))
-            //{
-            //    scaleMov += 0.2f;
-            //}
-
-            //if (Input.GetButtonDown("ScaleDown"))
-            //{
-            //    scaleMov -= 0.2f;
-            //}
     }
 }

@@ -14,6 +14,10 @@ public class modelHandler : MonoBehaviour
 
     public Vector4 floatVector = new Vector4(1, 1, 1, 1);
 
+    public GameObject cameron;
+
+    public Texture2D blboblbl = null;
+
     void Start()
     {
         setXScale(0.5f);
@@ -37,8 +41,33 @@ public class modelHandler : MonoBehaviour
         finalMath2Fac(0);
         finalMath1OpChange(0);
         finalMath2OpChange(0);
+
+        setFeedbackAmt(0);
+        setFinalFinalOut(1);
     }
 
+
+    void Update()
+    {
+        Resources.UnloadUnusedAssets();
+
+        if (cameron.GetComponent<visualFeedback>().texToPass != null)
+        {
+            blboblbl = cameron.GetComponent<visualFeedback>().texToPass;
+        }
+        mattTheSquid.SetTexture("whomble", blboblbl);
+    }
+
+
+    public void setFeedbackAmt(float value)
+    {
+        mattTheSquid.SetFloat("feedbackAmt", 16 * value);
+    }
+    
+    public void setFinalFinalOut(float value)
+    {
+        mattTheSquid.SetFloat("finalFinalFinalOut", value);
+    }
 
     void setAFloat(string var, float val, int num)
     {
