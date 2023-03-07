@@ -735,7 +735,7 @@ Shader "Custom/shadey"
             float4 fuckHead = tex2D(whomble, IN.uv_MainTex);
             float3 flimHead = float3(fuckHead.x, fuckHead.y, fuckHead.z);
 
-            o.Albedo = finalFinalFinalOut * (feedbackAmt * flimHead + clamp(ampRGB[0] * float3(ampRGB[1], ampRGB[2], ampRGB[3]), 0, 8));
+            o.Albedo = 0.2f * finalFinalFinalOut * (feedbackAmt * flimHead + (5 - feedbackAmt) * clamp(ampRGB[0] * float3(ampRGB[1], ampRGB[2], ampRGB[3]), 0, 8) / 5);
 
             fixed4 c = tex2D(_MainTex, IN.uv_MainTex) * _Color;
             o.Metallic = _Metallic;

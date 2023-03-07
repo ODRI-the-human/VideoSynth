@@ -61,7 +61,7 @@ public class modelHandler : MonoBehaviour
 
     public void setFeedbackAmt(float value)
     {
-        mattTheSquid.SetFloat("feedbackAmt", 16 * value);
+        mattTheSquid.SetFloat("feedbackAmt", 5 * value);
     }
     
     public void setFinalFinalOut(float value)
