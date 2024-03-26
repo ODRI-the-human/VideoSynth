@@ -11,6 +11,8 @@ public class GetShaderProperties : MonoBehaviour
 
     public Material mattTheSquid;
 
+    int timer = 1;
+
     // Update is called once per frame
     void Update()
     {
@@ -19,5 +21,6 @@ public class GetShaderProperties : MonoBehaviour
 
         sinVal = 1 * Mathf.Sin(xVal);
         mattTheSquid.SetFloat("inputAmpMult", sinVal);
+        Resources.UnloadUnusedAssets();
     }
 }

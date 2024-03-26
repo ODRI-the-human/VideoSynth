@@ -9,6 +9,7 @@ public class visualFeedback : MonoBehaviour
     // Update is called once per frame (as is onrenderimage)
     void OnRenderImage(RenderTexture src, RenderTexture dest)
     {
+        Destroy(texToPass);
         texToPass = toTexture2D(src);
 
         Graphics.Blit(texToPass, dest);
@@ -24,5 +25,7 @@ public class visualFeedback : MonoBehaviour
         texToPass = tex;
 
         return tex;
+
+        Destroy(tex);
     }
 }

@@ -49,8 +49,6 @@ public class modelHandler : MonoBehaviour
 
     void Update()
     {
-        Resources.UnloadUnusedAssets();
-
         if (cameron.GetComponent<visualFeedback>().texToPass != null)
         {
             blboblbl = cameron.GetComponent<visualFeedback>().texToPass;

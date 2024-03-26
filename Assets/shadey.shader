@@ -121,12 +121,24 @@ Shader "Custom/shadey"
         float _Width = 5;
         float _Height;
 
-        float nrand(float2 uv)
+
+        float basicRand(float2 uv)
         {
-            return frac(sin(dot(5 * uv, float2(12.9898, 78.233))) * 43758.5453 * sin(unityTime));
+            return frac(sin(dot(5 * uv, float2(12.9898 * sin(unityTime), 78.233 * sin(unityTime)))) * 43758.5453);// * sin(unityTime));
         }
 
-        
+        // Hey so I will just make a bunch of random functions and chuck them here, put them in their own functions eventually yeah?
+        float nrand(float2 uv)
+        {
+            //float i = floor(sin(uv.x * pow(uv.y, 2) * 205.4324));  // integer
+            //float f = frac(sin(pow(uv.x, 2) * uv.y * 205.4324));
+
+            //float f = frac(sin(dot(5 * uv, float2(12643.9898, 7234238.233)))) * sin(unityTime);
+            //float u = f * f * (3.0 - 2.0 * f); // custom cubic curve
+            //return lerp(basicRand(i), basicRand(i + 1.0), u); // using it in the interpolation
+            //return noise(uv);
+            return basicRand(uv);
+        }
 
         // Add instancing support for this shader. You need to check 'Enable Instancing' on materials that use the shader.
         // See https://docs.unity3d.com/Manual/GPUInstancing.html for more information about instancing.
